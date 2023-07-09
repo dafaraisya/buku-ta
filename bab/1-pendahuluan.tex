@@ -3,81 +3,61 @@
 
 % Ubah bagian-bagian berikut dengan isi dari pendahuluan
 
-Penelitian ini dilatarbelakangi oleh \lipsum[1][1-5]
-
 \section{Latar Belakang}
 \label{sec:latarbelakang}
 
-Pesatnya perkembangan roket yang merupakan \lipsum[1]
+Dalam berbagai aspek kehidupan, presentasi sangat memberikan pengaruh penting, mulai dari bangku sekolahan, hingga berbagai macam bidang pekerjaan. Sebagai contoh kegiatan belajar mengajar di Sekolah pada era teknologi informasi seperti sekarang ini, sudah banyak yang memanfaatkan berbagai media pembelajaran sebagai upaya untuk memperbaiki proses pembelajaran menjadi lebih efektif dan fungsional \parencite{Rasmila2022}. Presentasi menjadi cara berbagai orang untuk menyampaikan informasi, ide atau gagasan yang ingin disampaikan. Hal ini berarti bahwa presentasi merupakan salah satu bentuk komunikasi yang digunakan untuk menyampaikan pesan kepada pihak lain melalui tulisan atau lisan, dengan harapan orang dapat memahami apa yang disampaikan oleh pengirim pesan dengan baik. \parencite{Hilmia2016}. Namun, terkadang dalam melakukan presentasi dirasa terdapat beberapa kekurangan yang terjadi. Umumnya terdapat tiga cara yang dapat dilakukan dalam mengontrol presentasi yang tersedia saat ini. Cara itu mulai dari kontrol sendiri secara langsung melalui tombol di keyboard dan mouse, meminta bantuan orang lain untuk mengontrol, atau menggunakan perangkat tambahan lain.\parencite{MuhammadIdress2021} 
 
-\lipsum[2]
+Kekurangan kontrol presentasi secara mandiri melalui tombol di keyboard dan mouse adalah presentator harus berada di posisi yang berdekatan dengan laptop, yang berarti tidak bisa dikendalikan secara jarak jauh. Kemudian untuk kekurangan apabila meminta bantuan orang lain untuk mengontrol, adalah sering terjadi kesalahpahaman antara presentator dengan orang yang dimintai bantuan. Dan terkahir untuk kontrol menggunakan perangkat tambahan lain, terdapat kekurangan dari sisi biaya yang dikeluarkan dan sering terjadi kemungkinan kerusakan secara hardware yang terjadi secara tiba-tiba. Selain itu, apabila kita menggunakan perangkat tambahan, maka kita perlu membawa-bawa perangkat tambahan yang merepotkan. Dan yang terkahir kita perlu melakukan charge atau mengganti baterai apabila perangkat tersebut kehabisan daya.\parencite{Rahmad2022}
 
-\section{Permasalahan}
+Padahal terdapat cara lain untuk dapat mengontrol presentasi, yaitu dengan menggunakan gerakan atau pose tangan. Karena penggunaan pose tangan dirasa lebih natural dan intuitif sebagai manusia dalam melakukan komunikasi atau interaksi, Seperti diantaranya adalah menunjuk pada bagian sesuatu yang menjadi \emph{highlight}, atau juga pose lainnya yang menunjukkan keinginan untuk menavigasi dari slide satu ke yang lainnya. Selain itu, ini menjadi pilihan lain karena memang penggunaan pose tangan dalam interaksi manusia dengan komputer telah mulai banyak digunakan dalam beberapa tahun terakhir \parencite{Indriani2021}. Disisi lain, dengan cara ini maka kita tidak perlu alat tambahan ataupun memiliki kontak langsung dengan perangkat yang digunakan untuk presentasi.\parencite{FariaSoroni2021}
+
+Dalam proses penerapannya nanti, cara pendekatan yang paling baik untuk proses pendeteksian pose tangan ini adalah menggunakan kamera sebagai input dan diproses menggunakan metode CNN. CNN adalah pengembangan dari \emph{Multilayer Perceptron (MLP)} yang didesain untuk mengolah data dua dimensi \parencite{IWayan2016}. Penggunaan CNN dilakukan karena metode ini lebih efisien dibandingkan metode \emph{neural network} lainnya terutama untuk memori dan kompleksitas. Selain itu, terdapat penelitian sebelumnya yang berkaitan dengan topik ini dengan judul \emph{"Power Point slideshow navigation control with hand gestures using Hidden Markov Model method"} yang dimana menghasilkan akurasi sebesar 76.47\%. Berdasarkan data tersebut diharapkan penggunaan model CNN dapat menghasilkan akurasi yang lebih baik dibandingkan dengan model yang digunakan dalam penelitian tersebut \parencite{AhmedKadem2020}.
+
+Aplikasi yang dapat digunakan untuk presentasi sendiri ada berbagai macam, salah satunya adalah \emph{Microsoft PowerPoint}. Aplikasi ini merupakan salah satu program berbasis multimedia yang dirancang khusus untuk menyampaikan presentasi yang mampu menjadikannya sebagai media komunikasi yang menarik \parencite{Muthoharoh2019}. Dengan diadakannya penelitian ini diharapkan hasil klasifikasi tersebut dapat dapat dipetakan kedalam beberapa fungsi kontrol slide yang ada pada aplikasi \emph{Microsoft PowerPoint}.
+
+\section{Rumusan Permasalahan}
 \label{sec:permasalahan}
 
-Dari permasalahan tersebut maka \lipsum[1][1-6]
-
-\section{Tujuan}
-\label{sec:Tujuan}
-
-Tujuan dari \lipsum[1][1-3] adalah:
-
-\begin{enumerate}[nolistsep]
-
-  \item Membuat \lipsum[2][1-3]
-
-  \item \lipsum[3][1-3]
-
-\end{enumerate}
+Berdasarkan apa yang telah dipaparkan dalam latar belakang pada sub bab 1.1, dapat diketahui bahwa terdapat beberapa kekurangan yang dimiliki dalam kontrol presentasi yang tersedia saat ini. Oleh karenanya, diperlukan opsi lain dalam mengontrol presentasi. Selain itu, berdasarkan penelitan yang telah disebutkan pada sub bab 1.1, akurasi yang didapatkan diangka 76.47\%, yang dimana masih mungkin untuk dapat ditingkatkan lagi.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
 
-Batasan-batasan dari \lipsum[1][1-3] adalah:
+Berdasarkan tujuan dari penelitian ini, dibutuhkan batasan-batasan untuk memperjelas penelitian yang dilakukan sebagai berikut:
 
 \begin{enumerate}[nolistsep]
 
-  \item Mempermudah \lipsum[2][1-3]
-
-  \item \lipsum[3][1-5]
-
-  \item \lipsum[4][1-5]
+  \item Metode yang digunakan adalah \emph{Convolutional Neural Network}.
+  \item \emph{Library} yang digunakan adalah mediapipe.
+  \item Diterapkan pada aplikasi \emph{Microsoft Power Point}.
+  \item Diterapkan pada beberapa perintah tertentu yang digunakan dalam kontrol presentasi yaitu \emph{next slide, previous slide, pointer, zoom, pen,} dan \emph{erase}.
+  \item Input citra menggunakan \emph{webcam} dengan resolusi 480p.
 
 \end{enumerate}
 
-\section{Sistematika Penulisan}
-\label{sec:sistematikapenulisan}
+\section{Tujuan}
+\label{sec:tujuan}
 
-Laporan penelitian tugas akhir ini terbagi menjadi \lipsum[1][1-3] yaitu:
+Tujuan yang ingin dicapai dari tugas akhir ini adalah dapat melakukan kontrol presentasi berdasarkan hasil klasifikasi pose tangan dengan menggunakan metode Convolutional Neural Network.
+
+% dapat melakukan kontrol presentasi berbasis pose tangan menggunakan metode \emph{Convolutional Neural Network} dengan tingkat akurasi yang lebih tinggi dari 76.47\%.
+
+\section{Manfaat}
+\label{sec:manfaat}
+
+Terdapat beberapa manfaat yang didapatkan dari tugas akhir ini, yaitu :
 
 \begin{enumerate}[nolistsep]
 
-  \item \textbf{BAB I Pendahuluan}
-
-        Bab ini berisi \lipsum[2][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB II Tinjauan Pustaka}
-
-        Bab ini berisi \lipsum[3][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB III Desain dan Implementasi Sistem}
-
-        Bab ini berisi \lipsum[4][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB IV Pengujian dan Analisa}
-
-        Bab ini berisi \lipsum[5][1-5]
-
-        \vspace{2ex}
-
-  \item \textbf{BAB V Penutup}
-
-        Bab ini berisi \lipsum[6][1-5]
+  \item Bagi Penulis
+  \mbox{}\\Pengerjaan tugas akhir ini memiliki memanfaat bagi penulis mulai dari menambah pengetahuan mengenai topik yang diangkat khususnya terkait dengan metode \emph{Convolutional Neural Network}, hingga melatih kemampuan berpikir logis dan sistematis dalam mengatasi masalah.
+  \item Bagi Institusi
+  \mbox{}\\Tugas akhir ini, dapat menjadi referensi tambahan dalam pengembangan teknologi yang berkaitan dengan metode \emph{Convolutional Neural Network} dan pemrosesan klasifikasi pose tangan.
+  \item Bagi Masyarakat Umum
+  \mbox{}\\Bagi masyarakat umum dapat menggunakan penelitian ini untuk diterapkan dalam berbagai macam kesempatan presentasi.
 
 \end{enumerate}
+
+% Manfaat bagi penulis sendiri yaitu dapat memperdalam pengetahuan mengenai metode \emph{Convolutional Neural Network}, khususnya yang berkaitan dengan pemrosesan pose tangan. Selain itu, bagi masyarakat umum dapat menggunakan penelitian ini untuk diterapkan dalam berbagai macam kesempatan presentasi.  khususnya yang berkaitan dengan pemrosesan pose tangan. Selain itu, bagi masyarakat umum dapat menggunakan penelitian ini untuk diterapkan dalam berbagai macam kesempatan presentasi.  khususnya yang berkaitan dengan pemrosesan pose tangan. Selain itu, bagi masyarakat umum dapat menggunakan penelitian ini untuk diterapkan dalam berbagai macam kesempatan presentasi.  
+

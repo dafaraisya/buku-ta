@@ -2,33 +2,28 @@
 \label{chap:penutup}
 
 % Ubah bagian-bagian berikut dengan isi dari penutup
+Dalam bab ini berisi mengenai kesimpulan berdasarkan serangkaian rangkaian pengujian yang dipaparkan dalam Bab \ref{sec:hasilpengujian}, dan disesuaikan dengan tujuan yang berusaha dicapai dalam tugas akhir ini. Pada bab ini juga, terdapat saran-saran yang diberikan dalam rangka meningkatkan dan mengembangkan penelitian selanjutnya yang terkait dengan topik tugas akhir ini. Berikut ini adalah kesimpulan dan saran yang dapat diambil. 
 
 \section{Kesimpulan}
 \label{sec:kesimpulan}
 
-Berdasarkan hasil pengujian yang \lipsum[1][1-3] sebagai berikut:
+Berdasarkan hasil pengujian yang sudah dipaparkan, dapat diambil beberapa kesimpulan sebagai berikut.
 
 \begin{enumerate}[nolistsep]
-
-  \item Pembuatan \lipsum[2][1-3]
-
-  \item \lipsum[2][4-6]
-
-  \item \lipsum[2][7-10]
-
-\end{enumerate}
+  \item Klasifikasi citra dengan menggunakan metode Convolutional Neural Network (CNN) dapat digunakan untuk memprediksi citra pose tangan dengan tingkat akurasi mencapai 99.00\%. 
+  \item Pada pengujian jarak dapat disimpulkan bahwa variasi pengambilan jarak dataset sangat mempengaruhi akurasi. Dimana, jarak penurunannya akurasinya bisa mencapai 30\%.
+  \item Dari hasil pengujian variasi cahaya, disimpulkan bahwa model yang ada tidak mengalami penurunan yang signifikan baik ketika kondisi cahaya terang, redup, bahkan gelap. Penurunan yang terjadi masih dibawah 10\%.
+  \item Berdasarkan pengujian \emph{frame rate} dengan menggunakan beberapa model CNN, dapat diambil kesimpulan bahwa kompleksitas dan besar ukuran model sangat mempengaruhi performa FPS-nya. 
+  \item Dari hasil klasifikasi model yang didapatkan, dapat dihubungkan dengan berbagai fungsi navigasi ataupun penggunaan beberapa fitur kontrol dalam aplikasi Microsoft PowerPoint. 
+  \item Kontrol presentasi menggunakan pose tangan dapat memberikan respon \emph{user experience} positif yang menarik dan mudah digunakan. 
+\end{enumerate}   
 
 \section{Saran}
 \label{chap:saran}
 
-Untuk pengembangan lebih lanjut pada \lipsum[1][1-3] antara lain:
+Dalam rangka pengembangan penelitian kedepan terutama yang terkait dengan topik Convolution Neural Network, pose tangan, ataupun kontrol presentasi, dapat diusulkan beberapa saran yang disebutkan sebagai berikut.
 
 \begin{enumerate}[nolistsep]
-
-  \item Memperbaiki \lipsum[2][1-3]
-
-  \item \lipsum[2][4-6]
-
-  \item \lipsum[2][7-10]
-
-\end{enumerate}
+  \item Perlu ditambahkan jumlah dataset dengan berbagai variasi jarak pada saat pengambilan dataset. Sehingga diharapkan akurasi hasil klasifikasi tetap baik meskipun diambil dari jarak yang bervariasi.
+  \item Menambahkan dataset dengan variasi ukuran tangan dari berbagai macam orang, agar akurasi yang dihasilkan lebih stabil meskipun diuji keresponden yang berbeda-beda.
+\end{enumerate} 
