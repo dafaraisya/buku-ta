@@ -53,6 +53,10 @@
 \patchcmd{\chapter}{plain}{fancy}{}{}
 \patchcmd{\chapter}{empty}{plain}{}{}
 
+% ganti bahasa caption gambar dan tabel
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+
 % Command untuk bulan
 \newcommand{\MONTH}{%
   \ifcase\the\month

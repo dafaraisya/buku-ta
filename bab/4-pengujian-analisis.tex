@@ -91,11 +91,12 @@ Pada tugas akhir ini dilakukan empat skenario pengujian. Pengujian ini diperluka
 
 \begin{enumerate}[nolistsep]
 
-  \item Pengujian hasil training dan validasi model CNN
+  \item Pengujian hasil \emph{training} dan validasi model CNN
   \item Pengujian dengan menggunakan variasi jarak dataset
   \item Pengujian dengan menggunakan variasi Pencahayaan
   \item Pengujian tingkat \emph{Frame Rate}
   \item Pengujian dengan menggunakan tangan dari responden yang berbeda
+  \item Pengujian \emph{response time}
   \item Pengujian dengan membandingkan model lain (\emph{Resnet50, VGG16,} dan \emph{MobileNet}) 
   \item Pengujian \emph{user experience}
 
@@ -111,17 +112,17 @@ Hasil pengujian adalah implementasi dari skenario pengujian yang sudah dijelaska
 
 \begin{figure}[!htb]
   \centering
-  \begin{subfigure}{0.53\textwidth}
+  \begin{subfigure}{0.52\textwidth}
     \centering
     \includegraphics[width=\linewidth]{gambar/training-validation-accuracy.png}
     \caption{Training and Validation Accuracy}
-    \label{fig:landmarknextslide} 
+    \label{fig:Training and Validation Accuracy} 
   \end{subfigure}
-  \begin{subfigure}{0.46\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{gambar/training-validation-loss.png}
     \caption{Training and Validation Loss}
-    \label{fig:landmarkpreviousslide} 
+    \label{fig:Training and Validation Loss} 
   \end{subfigure}
   \caption{Hasil Pengujian Model}
   \label{fig:Pengujian Training Validation}
@@ -129,18 +130,18 @@ Hasil pengujian adalah implementasi dari skenario pengujian yang sudah dijelaska
 
 \hfill \break
 
-Pengujian model bertujuan untuk mengukur akurasi dari model yang dibuat berdasarkan hasil training yang dilakukan menggunakan \emph{library tensorflow}. Akurasi ini dapat diukur dari hasil perhitungan tiap \emph{epoch} yang dilakukan. Grafik pengujian model perbandingan antara akurasi \emph{training} dengan \emph{validation} pada tiap \emph{epoch}, dapat dilihat pada gambar \ref{fig:Pengujian Training Validation}. Training yang dimaksud disini adalah hasil model dari dataset yang dilatih. Sedangkan validation menggunakan dataset yang belum pernah dilihat sebelumnya (berbeda dengan dataset pada training).
+Pengujian model bertujuan untuk mengukur akurasi dari model yang dibuat berdasarkan hasil \emph{training} yang dilakukan menggunakan \emph{library tensorflow}. Akurasi ini dapat diukur dari hasil perhitungan tiap \emph{epoch} yang dilakukan. Grafik pengujian model perbandingan antara akurasi \emph{training} dengan \emph{validation} pada tiap \emph{epoch}, dapat dilihat pada gambar \ref{fig:Pengujian Training Validation}. Training yang dimaksud disini adalah hasil model dari dataset yang dilatih. Sedangkan \emph{validation} menggunakan dataset yang belum pernah dilihat sebelumnya (berbeda dengan dataset pada \emph{training}).
 
-Sedangkan untuk perbedaan akurasi dan loss adalah akurasi merupakan banyaknya hasil prediksi yang diklasifikasikan dengan benar. Sedangkan, loss adalah nilai yang menunjukkan perbedaan dari target yang diharapkan. Melalui Grafik \ref{fig:Pengujian Training Validation} didapatkan informasi bahwa nilai akurasi tiap \emph{epoch} menunjukkan adanya peningkatan dari waktu kewaktu. Nilai akurasi \emph{training} akhirnya ada pada 99\%. Sedangkan, untuk akurasi \emph{validation} akhirnya ada pada kisaran 96\%. Performa akurasi model yang hampir sama antara training dan validasi adalah hasil yang baik, karena artinya model dapat memprediksi data yang belum pernah dilihat sebelumnya.
+Sedangkan untuk perbedaan akurasi dan loss adalah akurasi merupakan banyaknya hasil prediksi yang diklasifikasikan dengan benar. Sedangkan, loss adalah nilai yang menunjukkan perbedaan dari target yang diharapkan. Melalui Grafik \ref{fig:Pengujian Training Validation} didapatkan informasi bahwa nilai akurasi tiap \emph{epoch} menunjukkan adanya peningkatan dari waktu kewaktu. Nilai akurasi \emph{\emph{training}} akhirnya ada pada 99\%. Sedangkan, untuk akurasi \emph{validation} akhirnya ada pada kisaran 96\%. Performa akurasi model yang hampir sama antara \emph{training} dan validasi adalah hasil yang baik, karena artinya model dapat memprediksi data yang belum pernah dilihat sebelumnya.
 
-Pada training loss didapatkan nilai dikisaran 0,03. Sedangkan, validation loss dikisaran 0,12. Jarak antara training dan validation dengan nilai loss yang semakin kecil ini menunjukkan prediksi yang error pada model juga kecil.
+Pada \emph{training loss} didapatkan nilai dikisaran 0,03. Sedangkan, \emph{validation loss} dikisaran 0,12. Jarak antara \emph{training} dan \emph{validation} dengan nilai \emph{loss} yang semakin kecil ini menunjukkan prediksi yang error pada model juga kecil.
 
 \subsection{Hasil Pengujian Menggunakan Variasi Jarak}
 \label{subsec:Hasil Pengujian Menggunakan Variasi Jarak}
 
-Skenario pengujian menggunakan variasi jarak bertujuan mengukur akurasi dari setiap jarak yang ditentukan. Hal ini dapat menunjukkan seberapa baik kemampuan model dalam mendeteksi klasifikasi pose tangan pada jarak tertentu. Akurasi pengujian model ini diukur dengan membuat data pengujian, dimana data pengujian ini berisi input citra yang diambil diluar dataset. Variasi jarak yang digunakan sendiri dapat dilihat pada Tabel \ref{tb:Gambaran Kondisi Pengujian Jarak} dimana pengujian dilakukan pada jarak 40 cm, 60 cm, 100 cm. Data yang telah didapat dapat dihitung berapa banyak data yang benar sesuai hasil prediksi dan berapa banyak yang tidak sesuai hasil prediksi.
+Skenario pengujian menggunakan variasi jarak bertujuan mengukur akurasi dari setiap jarak yang ditentukan. Hal ini dapat menunjukkan seberapa baik kemampuan model dalam mendeteksi klasifikasi pose tangan pada jarak tertentu. Akurasi pengujian model ini menggunakan data pengujian yang diambil diluar dataset. Variasi jarak yang digunakan sendiri dapat dilihat pada Tabel \ref{tb:Gambaran Kondisi Pengujian Jarak} dimana pengujian dilakukan pada jarak 40 cm, 60 cm, 80 cm, 100 cm, 150 cm, 200 cm, 250 cm, dan 300 cm. Data yang telah didapat dapat dihitung berapa banyak data yang benar sesuai hasil prediksi dan berapa banyak yang tidak sesuai hasil prediksi.
 
-\begin{longtable}{|c|c|c|}
+\begin{longtable}[!htb]{|M{8mm}|M{35mm}|M{70mm}|}
   \caption{Gambaran Kondisi Pengujian Jarak}
   \label{tb:Gambaran Kondisi Pengujian Jarak}\\
   \hline
@@ -155,180 +156,413 @@ Skenario pengujian menggunakan variasi jarak bertujuan mengukur akurasi dari set
   \hline
   4 & \emph{100}  &  \includegraphics[scale=0.2]{gambar/pengujian-jarak/pengambilan-data/jarak-100cm.jpg} \\
   \hline
+  5 & \emph{150}  &  \includegraphics[scale=0.2]{gambar/pengujian-jarak/pengambilan-data/jarak-150cm.jpg} \\
+  \hline
+  6 & \emph{200}  &  \includegraphics[scale=0.2]{gambar/pengujian-jarak/pengambilan-data/jarak-200cm.jpg} \\
+  \hline
+  7 & \emph{250}  &  \includegraphics[scale=0.2]{gambar/pengujian-jarak/pengambilan-data/jarak-250cm.jpg} \\
+  \hline
+  8 & \emph{300}  &  \includegraphics[scale=0.2]{gambar/pengujian-jarak/pengambilan-data/jarak-300cm.jpg} \\
+  \hline
 \end{longtable}
 
-Pengujian variasi jarak ini diuji dengan menggunakan dua model yang memiliki perbedaan pada datasetnya. Model yang pertama menggunakan kumpulan dataset yang dimana posisi pengambilan datanya bersifat statis disatu jarak tertentu. Jarak yang digunakan dalam model pertama ini adalah sejauh 40 cm. Selain model tersebut, dibuat pula model yang kedua. Model kedua ini menggunakan kumpulan dataset yang posisi pengambilannya bervariasi mulai dari 40 cm hingga 100 cm. Tujuan dilakukannya variasi pengambilan dataset ini untuk diuji apakah model ini dapat mendeteksi lebih baik  dibandingkan dengan model yang hanya menggunakan dataset dengna satu variasi jarak saja. Berikut ini adalah hasil dari pengujian menggunakan variasi jarak.
+Pengujian variasi jarak ini diuji dengan menggunakan dua model yang memiliki perbedaan pada datasetnya. Model yang pertama menggunakan kumpulan dataset yang dimana posisi pengambilan datanya bersifat statis disatu jarak tertentu. Jarak yang digunakan dalam model pertama ini adalah sejauh 40 cm. Selain model tersebut, dibuat pula model yang kedua. Model kedua ini menggunakan kumpulan dataset yang posisi pengambilannya bervariasi mulai dari 40 cm hingga 100 cm. Tujuan dilakukannya variasi pengambilan dataset ini untuk diuji apakah model ini dapat mendeteksi lebih baik  dibandingkan dengan model yang hanya menggunakan dataset dengna satu variasi jarak saja. Berikut ini hasil pengujian menggunakan variasi jarak.
 
 \subsubsection{Pengujian Menggunakan Dataset Satu Jarak}
 \label{subsubsec:Pengujian Menggunakan Dataset Satu Jarak}
 
-Dalam model pertama ini, seperti yang telah disebut dalam bab \ref{subsec:Hasil Pengujian Menggunakan Variasi Jarak} jarak yang digunakan sebagai pengambilan dataset adalah sebesar 40 cm yang berarti ini sama dengan panjang jarak pada variasi yang terdekat. Hasil distribusi prediksi klasifikasi dapat dilihat pada Gambar \ref{fig:Pengujian Tanpa Variasi Jarak Dataset (40 cm)} untuk jarak 40 cm, Gambar \ref{fig:Pengujian Tanpa Variasi Jarak Dataset (60 cm)} untuk jarak 60 cm, Gambar \ref{fig:Pengujian Tanpa Variasi Jarak Dataset (80 cm)} untuk jarak 80 cm, dan Gambar \ref{fig:Pengujian Tanpa Variasi Jarak Dataset (100 cm)}. Hasil distribusinya cukup beragam namun hampir semuanya terdapat kesalahan prediksi yang masuk kedalam kelas \emph{erase}.  
+Hasil akurasi pengujian ini dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Tanpa Variasi Jarak Dataset}. Tingkat akurasi yang didapatkan mengalami penurunan setiap jaraknya diperlebar. Saat jarak 40 cm, akurasi yang didapatkan sebesar 96,00\%, saat jarak 60 cm didapatkan akurasi 95,00\%. Sedangkan saat jarak 80 cm akurasinya mulai menurun menjadi 75,50 \%, dan semakin menurun setiap jarak diperlebar. Tingkat paling parahnya terjadi saat mulai lebih jauh dari 150 cm, akurasi yang dihasilkan dibawah 50\% yaitu sebesar 43,00\% yang berarti mayoritas data citra yang diprediksi sudah salah.
 
-Hasil akurasinya dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Tanpa Variasi Jarak Dataset}. Melalui data tersebut didapatkan hasil bahwa tingkat akurasi yang didapatkan mengalami penurunan setiap jaraknya diperlebar, dimana saat jarak 40 cm didapatkan akurasi sebesar 96.00 \%, saat jarak 60 cm didapatkan akurasi 95.00 \%. Sedangkan saat jarak 80 cm akurasinya sebesar 75.50 \% dan yang terakhir saat jarak 100 cm didapatkan akurasi sebesar 68.00 \%. Berkurangnya akurasi seiring bertambahnya jarak terjadi karena berkurangnya keakuratan titik \emph{landmark} yang dapat dideteksi. Selain itu, bisa diketahui juga bahwa jarak yang paling ideal adalah jarak yang sesuai dengan pengambilan dataset yaitu sebesar 40 cm.
+% \begin{longtable}{|c|c|m{20mm}|m{20mm}|c|c|c|c|}
+%   \caption{Hasil Pengujian Tanpa Variasi Jarak Dataset}
+%   \label{tb:Hasil Pengujian Tanpa Variasi Jarak Dataset}\\
+%   \hline
+%   \rowcolor[HTML]{FFFFFF}
+%   \textbf{No.} & \textbf{Jarak(cm)} & \textbf{Data Terdeteksi Benar} & \textbf{Data Terdeteksi Salah} & \textbf{\emph{Precision}(\%)} & \textbf{\emph{Recall}(\%)} & \textbf{\emph{F1 Score}(\%)} & \textbf{Akurasi(\%)} \\
+%   \hline
+%   1 & 40  & 192 & 8 & 97 & 97 & 96 & 96,00  \\
+%   2 & 60  & 190 & 10 & 97 & 96 & 95 & 95,00  \\
+%   3 & 80  & 151 & 49 & 79 & 73 & 68 & 75,50  \\
+%   4 & 100 & 136 & 64 & 60 & 62 & 56 & 68,00  \\
+%   5 & 150 & 128 & 172 & 59 & 61 & 55 & 64,00  \\
+%   6 & 200 & 86 & 114 & 50 & 43 & 36 & 43,00  \\
+%   7 & 250 & 25 & 175 & 2 & 12 & 3 & 12,50  \\
+%   8 & 300 & 28 & 172 & 14 & 13 & 4 & 14,00  \\
+%   \hline
+% \end{longtable}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/40cm.png}
-  \caption{Pengujian Tanpa Variasi Jarak Dataset (40 cm)}
-  \label{fig:Pengujian Tanpa Variasi Jarak Dataset (40 cm)}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/60cm.png}
-  \caption{Pengujian Tanpa Variasi Jarak Dataset (60 cm)}
-  \label{fig:Pengujian Tanpa Variasi Jarak Dataset (60 cm)}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/80cm.png}
-  \caption{Pengujian Tanpa Variasi Jarak Dataset (80 cm)}
-  \label{fig:Pengujian Tanpa Variasi Jarak Dataset (80 cm)}
-\end{figure}
-
-\hfill \break
-\hfill \break
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.8]{gambar/pengujian-jarak/homogen-dataset/100cm.png}
-  \caption{Pengujian Tanpa Variasi Jarak Dataset (100 cm)}
-  \label{fig:Pengujian Tanpa Variasi Jarak Dataset (100 cm)}
-\end{figure}
-
-\begin{longtable}{|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil Pengujian Tanpa Variasi Jarak Dataset}
   \label{tb:Hasil Pengujian Tanpa Variasi Jarak Dataset}\\
   \hline
-  \rowcolor[HTML]{FFFFFF}
-  \textbf{No.} & \textbf{Jarak} & \textbf{Data Terdeteksi Benar} & \textbf{Data Terdeteksi Salah} & \textbf{Akurasi(\%)} \\
+  \textbf{No.} & \textbf{Jarak(cm)} & \textbf{\emph{Precision}(\%)} & \textbf{\emph{Recall}(\%)} & \textbf{\emph{F1 Score}(\%)} & \textbf{Akurasi(\%)} \\
   \hline
-  1 & 40 cm  & 192 & 8 & 96.00\%  \\
-  2 & 60 cm  & 190 & 10 & 95.00\%  \\
-  3 & 80 cm  & 151 & 49 & 75.50\%  \\
-  4 & 100 cm & 136 & 64 & 68.00\%  \\
+  1 & 40  & 97 & 97 & 96 & 96,00  \\
+  2 & 60  & 97 & 96 & 95 & 95,00  \\
+  3 & 80  & 79 & 73 & 68 & 75,50  \\
+  4 & 100 & 60 & 62 & 56 & 68,00  \\
+  5 & 150 & 59 & 61 & 55 & 64,00  \\
+  6 & 200 & 50 & 43 & 36 & 43,00  \\
+  7 & 250 & 2 & 12 & 3 & 12,50  \\
+  8 & 300 & 14 & 13 & 4 & 14,00  \\
   \hline
 \end{longtable}
+
+% Hasil distribusi prediksinya sendiri dapat dilihat pada Gambar \ref{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset}. 
+
+Hasil distribusinya sendiri cukup beragam namun hampir semuanya terdapat kesalahan prediksi yang masuk kedalam kelas \emph{erase}. Penurunan  Berkurangnya akurasi seiring bertambahnya jarak terjadi karena berkurangnya keakuratan titik \emph{landmark} yang dapat dideteksi. Sedangkan dikondisi lebih dari 200 cm, hampir semua prediksinya masuk kedalam kelas \emph{pointer} yang berarti model sudah sama sekali tidak dapat mengklasifikasikan citra. Selain itu, bisa diketahui juga bahwa jarak yang paling ideal adalah jarak yang sesuai dengan pengambilan dataset yaitu sebesar 40 cm.
+
+% \begin{figure}[!htb]
+%   \centering
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/40cm.png}
+%     \caption{40 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 40} 
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/60cm.png}
+%     \caption{60 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 60} 
+%   \end{subfigure}
+%   \quad
+%   \hfill
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/80cm.png}
+%     \caption{80 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 80}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/100cm.png}
+%     \caption{100 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 100}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.37\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/150cm.png}
+%     \caption{150 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 150}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.36\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/200cm.png}
+%     \caption{200 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 200}
+%   \end{subfigure}
+%   \begin{subfigure}{0.36\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/250cm.png}
+%     \caption{250 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 250}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.36\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/homogen-dataset/300cm.png}
+%     \caption{300 cm}
+%     \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset 300}
+%   \end{subfigure}
+%   \caption{Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset}
+%   \label{fig:Distribusi Hasil Pengujian Tanpa Variasi Jarak Dataset}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/40cm.png}
+%   \caption{Pengujian Tanpa Variasi Jarak Dataset (40 cm)}
+%   \label{fig:Pengujian Tanpa Variasi Jarak Dataset (40 cm)}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/60cm.png}
+%   \caption{Pengujian Tanpa Variasi Jarak Dataset (60 cm)}
+%   \label{fig:Pengujian Tanpa Variasi Jarak Dataset (60 cm)}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.79]{gambar/pengujian-jarak/homogen-dataset/80cm.png}
+%   \caption{Pengujian Tanpa Variasi Jarak Dataset (80 cm)}
+%   \label{fig:Pengujian Tanpa Variasi Jarak Dataset (80 cm)}
+% \end{figure}
+
+% \hfill \break
+% \hfill \break
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.8]{gambar/pengujian-jarak/homogen-dataset/100cm.png}
+%   \caption{Pengujian Tanpa Variasi Jarak Dataset (100 cm)}
+%   \label{fig:Pengujian Tanpa Variasi Jarak Dataset (100 cm)}
+% \end{figure}
 
 \subsubsection{Pengujian Menggunakan Dataset dengan Jarak Bervariasi}
 \label{subsubsec:Pengujian Menggunakan Dataset dengan Jarak Bervariasi}
-Dalam pengujian ini, model yang digunakan memiliki dataset yang jaraknya beda-beda. Penulis mengambil dataset tiap kelasnya dengan cara bergerak mulai dari jarak sekitar 40 cm terhadap kamera, dan perlahan-lahan mundur sampai jarak sekitar 100 cm. Hasil distribusi tiap kelasnya dapat dilihat pada Gambar \ref{fig:Pengujian Dataset dengan Variasi Jarak (40 cm)}, \ref{fig:Pengujian Dataset dengan Variasi Jarak (60 cm)}, \ref{fig:Pengujian Dataset dengan Variasi Jarak (60 cm)}, dan \ref{fig:Pengujian Dataset dengan Variasi Jarak (100 cm)}. Persebaran prediksi klasifikasinya lebih stabil dan umumnya berada pada kelas yang benar apabila dibandingkan dengan dataset tanpa variasi jarak. 
+Dalam pengujian ini, model yang digunakan memiliki dataset yang jaraknya berbeda-beda. Penulis mengambil dataset tiap kelasnya dengan cara bergerak mulai dari jarak sekitar 40 cm terhadap kamera, dan perlahan-lahan mundur sampai jarak sekitar 100 cm. Dalam pengujian dengan jarak dataset yang bervariasi ini didapatkan ringkasan hasil data seperti pada Tabel \ref{tb:Hasil Pengujian Dataset dengan Variasi Jarak}. 
 
-Dalam pengujian dengan jarak dataset yang bervariasi ini didapatkan ringkasan hasil data seperti pada Tabel \ref{tb:Hasil Pengujian Dataset dengan Variasi Jarak}. Berdasarkan data tersebut didapatkan hasil bahwa tingkat akurasi memang mengalami penurunan setiap jaraknya diperlebar. Namun, akurasi yang dihasilkan masih tetap lebih tinggi dibanding model sebelumnya. 
+% \begin{longtable}{|c|c|c|c|c|}
+%   \caption{Hasil Pengujian Dataset dengan Variasi Jarak}
+%   \label{tb:Hasil Pengujian Dataset dengan Variasi Jarak}\\
+%   \hline
+%   \rowcolor[HTML]{FFFFFF}
+%   \textbf{No.} & \textbf{Jarak(cm)} & \textbf{Data Terdeteksi Benar} & \textbf{Data Terdeteksi Salah} & \textbf{Akurasi(\%)} \\
+%   \hline
+%   1 & 40  & 198 & 2 & 99,00  \\
+%   2 & 60  & 195 & 5 & 97,50  \\
+%   3 & 80  & 194 & 6 & 97,00  \\
+%   4 & 100 & 189 & 11 & 94,50  \\
+%   5 & 150 & 181 & 19 & 90,50  \\
+%   6 & 200 & 154 & 46 & 77,00  \\
+%   7 & 250 & 65 & 135 & 32,50  \\
+%   8 & 300 & 174 & 26 & 13,00  \\
+%   \hline
+% \end{longtable}
 
-Saat jarak 40 cm didapatkan akurasi sebesar 99.00\%, saat jarak 60 cm didapatkan akurasi 97.50\%, Kemudian saat jarak 80 cm akurasinya sebesar 97.00\%, dan saat jarak 100 cm didapatkan akurasi sebesar 94.50\%. Dari data ini dapat diketahui bahwa variasi jarak pada dataset sangat mempengaruhi akurasi apabila pengambilan data citra dilakukan dengan jarak yang bervariasi juga.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/40cm.png}
-  \caption{Pengujian Dataset dengan Variasi Jarak (40 cm)}
-  \label{fig:Pengujian Dataset dengan Variasi Jarak (40 cm)}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/60cm.png}
-  \caption{Pengujian Dataset dengan Variasi Jarak (60 cm)}
-  \label{fig:Pengujian Dataset dengan Variasi Jarak (60 cm)}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/80cm.png}
-  \caption{Pengujian Dataset dengan Variasi Jarak (80 cm)}
-  \label{fig:Pengujian Dataset dengan Variasi Jarak (80 cm)}
-\end{figure}
-
-\hfill \break
-\hfill \break
-\hfill \break
-\hfill \break
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.8]{gambar/pengujian-jarak/heterogen-dataset/100cm.png}
-  \caption{Pengujian Dataset dengan Variasi Jarak (100 cm)}
-  \label{fig:Pengujian Dataset dengan Variasi Jarak (100 cm)}
-\end{figure}
-
-\begin{longtable}{|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil Pengujian Dataset dengan Variasi Jarak}
   \label{tb:Hasil Pengujian Dataset dengan Variasi Jarak}\\
   \hline
-  \rowcolor[HTML]{FFFFFF}
-  \textbf{No.} & \textbf{Jarak} & \textbf{Data Terdeteksi Benar} & \textbf{Data Terdeteksi Salah} & \textbf{Akurasi(\%)} \\
+  \textbf{No.} & \textbf{Jarak(cm)} & \textbf{\emph{Precision}(\%)} & \textbf{\emph{Recall}(\%)} & \textbf{\emph{F1 Score}(\%)} & \textbf{Akurasi(\%)} \\
   \hline
-  1 & 40 cm  & 198 & 2 & 99.00\%  \\
-  2 & 60 cm  & 195 & 5 & 97.50\%  \\
-  3 & 80 cm  & 194 & 6 & 97.00\%  \\
-  4 & 100 cm & 189 & 11 & 94.50\%  \\
+  1 & 40  & 99 & 99 & 99 & 99,00  \\
+  2 & 60  & 98 & 97 & 97 & 97,50  \\
+  3 & 80  & 98 & 98 & 97 & 97,00  \\
+  4 & 100 & 96 & 95 & 94 & 94,50  \\
+  5 & 150 & 94 & 91 & 89 & 90,50  \\
+  6 & 200 & 77 & 76 & 75 & 77,00  \\
+  7 & 250 & 21 & 33 & 23 & 32,50  \\
+  8 & 300 & 9 & 13 & 6 & 13,00  \\
   \hline
 \end{longtable}
+
+Akurasi yang dihasilkan secara umum, selalu lebih besar dibandingkan dengan model yang pertama. Saat jarak 40 cm didapatkan akurasi sebesar 99.00\%. Sedangkan, pada jarak 60 cm didapatkan akurasi 97.50\%. Akurasi yang didapatkan pada saat jarak 80 cm juga tidak terjadi penurunan yang signifikan dengan tingkat akurasinya sebesar 97.00\%. Begitu juga saat jarak 100 cm, masih didapatkan akurasi sebesar 94.50\%.   
+
+Pada jarak 150 cm, akurasi yang dihasilkan sebesar 90,50\%. Hal ini menunjukkan bahwa model berhasil mendapatkan akurasi yang lebih besar dari model pada penelitian sebelumnya pada Subbab \ref{subsec:Power Point slideshow navigation control with hand gestures using Hidden Markov Model method}, yang dimana dengan jarak yang sama hasil akurasinya diangka 76,47\%. Data ini sekaligus menjawab permasalahan yang diangkat pada Subbab \ref{sec:permasalahan} dimana peningkatan akurasi berhasil dilakukan sampai 90,50\%.
+
+Sedangkan pada pengujian dengan posisi jarak 200 cm, akurasi yang dihasilkan turun diangka 77,00\%. Walaupun terjadi penurunan akurasi yang cukup signifikan, namun model masih menunjukkan bahwa mayoritas data citra dapat diprediksi dengan benar. Performa akurasi model mulai tidak dapat mendeteksi mayoritas data citra, terjadi dijarak lebih dari 200 cm. Terlihat dari pengujian saat jarak 250 cm, akurasi yang didapatkan hanya 32,50\%. Begitu juga ketika jarak 300 cm, akurasinya semakin kecil menjadi 13,00\%.
+
+% Jika melihat hasil distribusi tiap kelasnya pada Gambar \ref{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset}, 
+Pada penilaian \emph{f1 score} juga menunjukkan nilai yang tidak jauh dari akurasi. Hal ini menunjukan bahwa jumlah data yang termasuk kedalam \emph{false negative} ataupun \emph{false positif} tergolong cukup kecil. Distribusi persebaran prediksi klasifikasinya juga lebih stabil dan umumnya berada pada kelas yang benar apabila dibandingkan dengan dataset tanpa variasi jarak. Namun, pada jarak lebih jauh dari 200 cm, distribusi prediksinya mayoritas masuk kedalam satu kelas saja yaitu \emph{pointer}. Hal ini menunjukkan bahwa pada jarak tersebut, model memang sudah tidak mampu memprediksi citra dengan baik. Karena hasil kerangka tangan dari estimasi pose MediaPipe juga sudah tidak akurat, dan variasi jarak dataset yang diambil hanya berkisar dijarak 40 cm sampai 100 cm.  
+
+Berdasarkan analisa tersebut diketahui bahwa tingkat akurasi mengalami penurunan setiap jaraknya diperlebar. Namun, akurasi yang dihasilkan masih tetap lebih tinggi dibanding model yang datasetnya tidak ada variasi jarak sama sekali.Jarak ideal yang didapatkan dengan model ini ada pada 40 cm. Sedangkan, batasan terjauh dimana model masih memiliki kemampuan memprediksi mayoritas data citra dengan benar ada pada jarak 200 cm.  
+
+% \newpage
+
+% \begin{figure}[!htb]
+%   \centering
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/40cm.png}
+%     \caption{40 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 40} 
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/60cm.png}
+%     \caption{60 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 60} 
+%   \end{subfigure}
+%   \quad
+%   \hfill
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/80cm.png}
+%     \caption{80 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 80}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/100cm.png}
+%     \caption{100 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 100}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.37\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/150cm.png}
+%     \caption{150 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 150}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.36\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/200cm.png}
+%     \caption{200 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 200}
+%   \end{subfigure}
+%   \begin{subfigure}{0.4\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/250cm.png}
+%     \caption{250 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 250}
+%   \end{subfigure}
+%   \quad
+%   \begin{subfigure}{0.36\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{gambar/pengujian-jarak/heterogen-dataset/300cm.png}
+%     \caption{300 cm}
+%     \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset 300}
+%   \end{subfigure}
+%   \caption{Distribusi Hasil Pengujian dengan Variasi Jarak Dataset}
+%   \label{fig:Distribusi Hasil Pengujian dengan Variasi Jarak Dataset}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/40cm.png}
+%   \caption{Pengujian Dataset dengan Variasi Jarak (40 cm)}
+%   \label{fig:Pengujian Dataset dengan Variasi Jarak (40 cm)}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/60cm.png}
+%   \caption{Pengujian Dataset dengan Variasi Jarak (60 cm)}
+%   \label{fig:Pengujian Dataset dengan Variasi Jarak (60 cm)}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.78]{gambar/pengujian-jarak/heterogen-dataset/80cm.png}
+%   \caption{Pengujian Dataset dengan Variasi Jarak (80 cm)}
+%   \label{fig:Pengujian Dataset dengan Variasi Jarak (80 cm)}
+% \end{figure}
+
+% \hfill \break
+% \hfill \break
+% \hfill \break
+% \hfill \break
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.8]{gambar/pengujian-jarak/heterogen-dataset/100cm.png}
+%   \caption{Pengujian Dataset dengan Variasi Jarak (100 cm)}
+%   \label{fig:Pengujian Dataset dengan Variasi Jarak (100 cm)}
+% \end{figure}
 
 \subsection{Hasil Pengujian Menggunakan Variasi Pencahayaan}
 \label{subsec:Hasil Pengujian Menggunakan Variasi Pencahayaan}
 
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.15]{gambar/lux-meter.jpeg}
+%   \caption{\emph{Digital Lux Meter}}
+%   \label{fig:Digital Lux Meter}
+% \end{figure}
+
+Pengujian menggunakan variasi Pencahayaan yang berbeda-beda ini dilakukan dengan tujuan untuk menguji performa tingkat keterbacaan pose tangan dalam berbagai kondisi cahaya di tempat pengambilan citra. Dalam mengukur pencahayaan ini digunakan alat ukur bernama \emph{Digital Lux Meter}. Perangkat ini berfungsi untuk mengukur banyaknya cahaya masuk menggunakan satuan lux dalam perhitungannya. Satuan lux sendiri adalah besarnya arus cahaya yang datang persatuan luas permukaan. \emph{Digital Lux Meter} yang digunakan sendiri memiliki spesifikasi untuk dapat mengukur cahaya dengan rentang 0 - 200.000 Lux, dengan tingkat akurasi kurang lebih 4\% dan resolusi 1 lux. Sehingga, alat ini dapat menjadi acuan tiap kondisi pencahayaan dalam skenario pengujian kali ini.
+
+Variasi pencahayaannya dibagi menjadi empat kondisi. Kondisi pertama adalah sangat terang, dimana pengambilan data dilakukan di luar ruangan pada saat siang hari atau dikisaran 800 lx jika diukur dengan \emph{lux meter}. Kondisi kedua adalah didalam ruangan yang mendapat cahaya lampu dengan cerah. Jika diukur dengan \emph{lux meter} nilainya pada kisaran 40 lx. Kondisi ketiga adalah pencahayaan yang redup, dimana pengujian diambil tetap dalam ruangan namun kondisi lampu mati dan hanya memanfaatkan cahaya matahari dari celah-celah jendela dan pintu ruangan. Apabila diukur dengan \emph{lux meter} didapatkan angka sebesar 15 lx. Kondisi terakhir adalah kondisi pencahayaan gelap, dimana pengujian dilakukan dalam ruangan tanpa cahaya lampu dan matahari. Sumber cahaya yang ada hanya dari layar laptop. Dalam kondisi ini didapatkan angka pada \emph{lux meter} sebesar 5 lx. Gambaran kondisi pengambilan data pengujian untuk kondisi sangat terang dapat dilihat Gambar \ref{fig:kondisi_800lux}, kondisi terang pada gambar \ref{fig:kondisi_40lux}, kondisi redup pada gambar \ref{fig:kondisi_15lux}, dan kondisi gelap pada gambar \ref{fig:kondisi_5lux}.
+
+Persebaran hasil klasifikasi yang benar dan salah untuk pencahayaan kondisi gelap ada pada Gambar \ref{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan 5 lux}. Hasil klasifikasi dimana citra yang sebenarnya termasuk klasifikasi \emph{'pointer'} tapi salah terdeteksi kedalam \emph{'erase'}. Hal ini bisa terjadi karena dikondisi gelap terkadang ada bagian yang terjadi kesalahan prediksi. Pada citra \emph{'pointer'} misalnya, bagian jari kelingking dan jempol yang tidak terdeteksi. Sehingga, pose pointer jadi terlihat seperti pose \emph{'erase'}. Hal inilah yang menyebabkan terdapat 14 citra \emph{'pointer'} yang salah terdeteksi kedalam kelas \emph{'erase'}. 
+
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.15]{gambar/lux-meter.jpeg}
-  \caption{\emph{Digital Lux Meter}}
-  \label{fig:Digital Lux Meter}
+  \includegraphics[scale=0.34]{gambar/pengujian-cahaya/kondisi_800lux.png}
+  \caption{Kondisi Sangat Terang(800 lx)}
+  \label{fig:kondisi_800lux} 
 \end{figure}
 
-Pengujian menggunakan variasi Pencahayaan yang berbeda-beda ini dilakukan dengan tujuan untuk menguji performa tingkat keterbacaan pose tangan dalam berbagai kondisi cahaya di tempat pengambilan citra. Dalam mengukur pencahayaan ini sendiri digunakan alat ukur bernama \emph{Digital Lux Meter}, yang dapat dilihat pada Gambar \ref{fig:Digital Lux Meter}. \emph{Lux Meter} merupakan perangkat yang mengukur banyaknya cahaya masuk menggunakan satuan lux dalam perhitungannya. Satuan lux sendiri adalah besarnya arus cahaya yang datang persatuan luas permukaan. Sehingga, alat ini dapat menjadi acuan tiap kondisi pencahayaan dalam skenario pengujian kali ini.
-
-Variasi pencahayaannya dibagi menjadi tiga kondisi. Kondisi pertama adalah didalam ruangan yang mendapat cahaya lampu dengan cerah. Jika diukur dengan \emph{lux meter} nilainya pada kisaran 40 lx. Kondisi kedua adalah pencahayaan yang redup, dimana pengujian diambil tetap dalam ruangan namun kondisi lampu mati dan hanya memanfaatkan cahaya matahari dari celah-celah jendela dan pintu ruangan. Apabila diukur dengan \emph{lux meter} didapatkan angka sebesar 15 lx. Kondisi terakhir adalah kondisi pencahayaan gelap, dimana pengujian dilakukan dalam ruangan tanpa cahaya lampu dan matahari. Sumber cahaya yang ada hanya dari layar laptop. Dalam kondisi ketiga ini didapatkan angka pada \emph{lux meter} sebesar 5 lx. Gambaran kondisi pengambilan data pengujian untuk kondisi terang dapat dilihat pada gambar \ref{fig:kondisi_40lux}, kondisi redup pada gambar \ref{fig:kondisi_15lux}, dan kondisi gelap pada gambar \ref{fig:kondisi_5lux}.
-
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.4]{gambar/pengujian-cahaya/kondisi_40lux.png}
+  \includegraphics[scale=0.34]{gambar/pengujian-cahaya/kondisi_40lux.png}
   \caption{Kondisi Terang(40 lx)}
   \label{fig:kondisi_40lux} 
 \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.4]{gambar/pengujian-cahaya/kondisi_15lux.png}
-  \caption{Kondisi Terang(15 lx)}
+  \includegraphics[scale=0.34]{gambar/pengujian-cahaya/kondisi_15lux.png}
+  \caption{Kondisi Redup(15 lx)}
   \label{fig:kondisi_15lux} 
 \end{figure}
 
-\hfill \break
-
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.4]{gambar/pengujian-cahaya/kondisi_5lux.png}
-  \caption{Kondisi Terang(5 lx)}
+  \includegraphics[scale=0.34]{gambar/pengujian-cahaya/kondisi_5lux.png}
+  \caption{Kondisi Gelap(5 lx)}
   \label{fig:kondisi_5lux} 
 \end{figure}
 
-Persebaran hasil klasifikasi yang benar dan salah untuk pencahayaan kondisi gelap ada pada Gambar \ref{fig:Pengujian Dataset dengan Variasi Pencahayaan 5lux}. Hasil klasifikasi dimana citra yang sebenarnya termasuk klasifikasi \emph{'pointer'} tapi salah terdeteksi kedalam \emph{'erase'}. Hal ini bisa terjadi karena dikondisi gelap terkadang ada bagian yang terjadi kesalahan prediksi. Pada citra \emph{'pointer'} misalnya, bagian jari kelingking dan jempol yang tidak terdeteksi. Sehingga, pose pointer jadi terlihat seperti pose \emph{'erase'}. Hal inilah yang menyebabkan terdapat 14 citra \emph{'pointer'} yang salah terdeteksi kedalam kelas \emph{'erase'}. 
+Berdasarkan pengujian yang dilakukan, didapatkan data seperti yang tertera dalam tabel \ref{tb:Hasil Pengujian dengan Variasi Pencahayaan}. Dalam data tersebut menunjukkan bahwa dalam kondisi cahaya terang dan sangat terang, tingkat akurasi yang dicapai dikisaran 99\%. Sedangkan untuk kondisi cahaya redup akurasinya yang didapatkan sebesar 96.00\%. Terakhir, dalam kondisi pencahayaan gelap akurasinya sebesar 89.00\%. Melalui data tersebut memang terjadi penurunan akurasi saat setiap kondisi pencahayaan semakin menurun. 
 
-Berdasarkan pengujian yang dilakukan, didapatkan data seperti yang tertera dalam tabel \ref{tb:Hasil Pengujian dengan Variasi Pencahayaan}. Dalam data tersebut menunjukkan bahwa dalam kondisi cahaya terang, tingkat akurasi yang dicapai sebesar 99.00\%. Sedangkan untuk kondisi cahaya redup akurasinya yang didapatkan sebesar 96.00\%. Terakhir, dalam kondisi pencahayaan gelap akurasinya sebesar 89.00\%. Melalui data tersebut memang terjadi penurunan akurasi saat setiap kondisi pencahayaan semakin menurun. 
+Namun, penurunan akurasi yang terjadi tidak terlalu signifikan, bahkan sampai dalam kondisi pencahayaan sangat gelap sekalipun. Hal ini lebih banyak dipengaruhi faktor kemampuan dalam \emph{library} MediaPipe. Selama MediaPipe masih dapat mendeteksi \emph{landmark} tangan dengan tepat, maka model klasifikasi pun juga tetap mampu memprediksi pose dengan tepat juga. Karena, yang dibaca oleh model adalah \emph{landmark} tangan yang sudah diproses MediaPipe, bukan gambar pose tangan langsung dari kamera. 
 
-Namun, penurunan akurasi yang terjadi tidak terlalu signifikan, bahkan sampai dalam kondisi pencahayaan sangat gelap sekalipun. Hal ini lebih banyak dipengaruhi faktor kemampuan dalam \emph{library mediapipe}. Selama \emph{mediapipe} masih dapat mendeteksi \emph{landmark} tangan dengan tepat, maka model klasifikasi pun juga tetap mampu memprediksi pose dengan tepat juga. Karena, yang dibaca oleh model adalah \emph{landmark} tangan yang sudah diproses \emph{mediapipe}, bukan gambar pose tangan langsung dari kamera. 
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.5]{gambar/pengujian-cahaya/400lux.png}
+%   \caption{Pengujian Dataset dengan Variasi Pencahayaan (400 lx)}
+%   \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 400lux} 
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.75]{gambar/pengujian-cahaya/40lux.png}
+%   \caption{Pengujian Dataset dengan Variasi Pencahayaan (40 lx)}
+%   \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 40lux} 
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.75]{gambar/pengujian-cahaya/15lux.png}
+%   \caption{Pengujian Dataset dengan Variasi Pencahayaan (15 lx)}
+%   \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 15lux} 
+% \end{figure}
+
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics[scale=0.75]{gambar/pengujian-cahaya/5lux.png}
+%   \caption{Pengujian Dataset dengan Variasi Pencahayaan (5 lx)}
+%   \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 5lux} 
+% \end{figure}
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.7]{gambar/pengujian-cahaya/40lux.png}
-  \caption{Pengujian Dataset dengan Variasi Pencahayaan (40 lx)}
-  \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 40lux} 
+  \begin{subfigure}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gambar/pengujian-cahaya/800lux.png}
+    \caption{800 lux}
+    \label{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan 800 lux} 
+  \end{subfigure}
+  \hfill
+  \quad
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gambar/pengujian-cahaya/40lux.png}
+    \caption{40 lux}
+    \label{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan 40 lux} 
+  \end{subfigure}
+  \quad
+  \hfill
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gambar/pengujian-cahaya/15lux.png}
+    \caption{15 lux}
+    \label{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan 15 lux}
+  \end{subfigure}
+  \hfill
+  \quad
+  \begin{subfigure}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gambar/pengujian-cahaya/5lux.png}
+    \caption{5 lux}
+    \label{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan 5 lux}
+  \end{subfigure}
+  \caption{Distribusi Hasil Pengujian dengan Variasi Pencahayaan}
+  \label{fig:Distribusi Hasil Pengujian dengan Variasi Pencahayaan}
 \end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.75]{gambar/pengujian-cahaya/15lux.png}
-  \caption{Pengujian Dataset dengan Variasi Pencahayaan (15 lx)}
-  \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 15lux} 
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=0.75]{gambar/pengujian-cahaya/5lux.png}
-  \caption{Pengujian Dataset dengan Variasi Pencahayaan (5 lx)}
-  \label{fig:Pengujian Dataset dengan Variasi Pencahayaan 5lux} 
-\end{figure}
+\hfill \break
 
 \begin{longtable}{|c|c|c|c|c|}
   \caption{Hasil Pengujian dengan Variasi Pencahayaan}
@@ -337,22 +571,35 @@ Namun, penurunan akurasi yang terjadi tidak terlalu signifikan, bahkan sampai da
   \rowcolor[HTML]{FFFFFF}
   \textbf{No.} & \textbf{Cahaya} & \textbf{Data Terdeteksi Benar} & \textbf{Data Terdeteksi Salah} & \textbf{Akurasi(\%)} \\
   \hline
-  1 & Terang (40 lx)  & 198 & 2 & 99.00\%  \\
-  2 & Redup (15 lx)   & 192 & 8 & 96.00\%  \\
-  3 & Gelap (5 lx)    & 178 & 22 & 89.00\%  \\
+  1 & Sangat Terang (800 lx)  & 199 & 1 & 99.50\%  \\
+  2 & Terang (40 lx)  & 198 & 2 & 99.00\%  \\
+  3 & Redup (15 lx)   & 192 & 8 & 96.00\%  \\
+  4 & Gelap (5 lx)    & 178 & 22 & 89.00\%  \\
   \hline
 \end{longtable}
+
+% \begin{longtable}{|c|c|c|c|c|}
+%   \caption{Hasil Pengujian Perbandingan Model}
+%   \label{tb:Hasil Pengujian Perbandingan Model}\\
+%   \hline
+%   \rowcolor[HTML]{FFFFFF}
+%   \textbf{No.} & \textbf{Jenis Model} & \textbf{Rata-Rata Akurasi Jarak(\%)} & \textbf{FPS} \\
+%   \hline
+%   1 & Model yang dibuat penulis  & 97 & 20,86 \\
+%   2 & Resnet50   & 96.25  & 11,66  \\
+%   3 & VGG16    & 95.37 & 11,96  \\
+%   4 & MobileNet    & 99 & 17,26 \\
+%   \hline
+% \end{longtable}
 
 \subsection{Hasil Pengujian \emph{Frame Rate}}
 \label{subsec:Hasil Pengujian Frame Rate}
 
-\emph{Frame Rate} pada umumnya dinyatakan dalam satuan per detik atau disebut sebagai \emph{Frame Per Second (FPS)}. FPS ini merupakan pengukuran seberapa banyak jumlah frame yang ada dalam satu detik. Pengujian \emph{Frame Rate} dianggap penting karena menjadi salah satu penilaian performa dari model yang dibuat. Selain itu, \emph{Frame Rate} juga sangat mempengaruhi penilaian \emph{user experience}. Apabila semakin kecil nilainya maka gerakan semakin terlihat patah-patah, dan respon yang diberikan semakin lambat. Sebaliknya, semakin besar nilainya maka  gerakan yang dihasilkan lebih lancar dan responnya semakin cepat.
-
-\newpage
+\emph{Frame Rate} pada umumnya dinyatakan dalam satuan per detik atau disebut sebagai \emph{Frame Per Second (FPS)}. FPS ini merupakan pengukuran seberapa banyak jumlah \emph{frame} yang ada dalam satu detik. Pengujian \emph{Frame Rate} dianggap penting karena menjadi salah satu penilaian performa dari model yang dibuat. Selain itu, \emph{Frame Rate} juga sangat mempengaruhi penilaian \emph{user experience}. Apabila semakin kecil nilainya maka gerakan semakin terlihat patah-patah, dan respon yang diberikan semakin lambat. Sebaliknya, semakin besar nilainya maka  gerakan yang dihasilkan lebih lancar dan responnya semakin cepat.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.7]{gambar/pengujian-fps/grafik-pengujian-fps.png}
+  \includegraphics[scale=0.8]{gambar/pengujian-fps/grafik-pengujian-fps.png}
   \caption{Grafik Pengujian \emph{Frame Rate}}
   \label{fig:Grafik Pengujian Frame Rate}
 \end{figure}
@@ -361,59 +608,59 @@ Pada pengujian kali ini, perhitungan \emph{frame rate} diuji dengan mengambil da
 
 \subsection{Hasil Pengujian dari Responden yang Berbeda}
 \label{subsec:Hasil Pengujian dari Responden yang Berbeda}
-Saat pengambilan dataset untuk proses \emph{training} model, data yang digunakan hanya menggunakan pose tangan penulis saja. Sehingga, perlu dilakukan pengujian apabila pose tangan yang dideteksi merupakan tangan selain penulis yang mungkin secara ukuran berbeda. Hal ini bertujuan untuk mengetahui tingkat akurasi model apabila tangan yang dideteksi memiliki ukuran atau bentuk yang tidak sama dengan tangan penulis yang dijadikan dataset.
+Saat pengambilan dataset untuk proses \emph{\emph{training}} model, data yang digunakan hanya menggunakan pose tangan penulis saja. Sehingga, perlu dilakukan pengujian apabila pose tangan yang dideteksi merupakan tangan selain penulis yang mungkin secara ukuran berbeda. Hal ini bertujuan untuk mengetahui tingkat akurasi model apabila tangan yang dideteksi memiliki ukuran atau bentuk yang tidak sama dengan tangan penulis yang dijadikan dataset.
 
 Dalam pengujian ini, kondisi pengambilan data responden dilakukan dikondisi ideal. Kondisi ideal yang dimaksud disini adalah kondisi dengan tingkat akurasi paling tinggi yang sudah diuji dalam skenario pengujian pada subbab \ref{subsec:Hasil Pengujian Menggunakan Variasi Jarak} dan \ref{subsec:Hasil Pengujian Menggunakan Variasi Pencahayaan}. Berdasarkan data tersebut, didapatkan bahwa kondisi paling ideal adalah saat jarak tangan dengan kamera diangka 40 cm. Sedangkan, untuk kondisi cahayanya dilakukan didalam ruangan yang terang (sekitar 40 lx). Berikut ini adalah hasil pengujiannya.
 
 \subsubsection{Pengujian Menggunakan Data Citra dari Responden 1}
 \label{subsec:Pengujian Menggunakan Data Citra dari Responden 1}
 
-Pada saat pengambilan data citra, responden 1 diposisikan untuk berada pada kondisi dengan tingkat akurasi paling ideal, dan diambil data citra sebanyak 25 frame pada tiap kelasnya, yang berarti total data citra yang diambil sebanyak 200 data. Berdasarkan gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 1} didapatkan tingkat akurasi yang dihasilkan sebesar 88.00\%. Hal ini berarti menunjukkan adanya penurunan akurasi dari model dengan input citra dari penulis. Namun, penurunan yang terjadi tidak terlalu jauh, sehingga masih input citra masih dapat terdeteksi dengan akurasi cukup baik. 
-
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.5]{gambar/pengujian-ukuran-tangan/tangan-alfan.png}
+  \includegraphics[scale=0.55]{gambar/pengujian-ukuran-tangan/tangan-alfan.png}
   \caption{Pengujian Menggunakan Data Citra dari Responden 1}
   \label{fig:Pengujian Menggunakan Data Citra dari Responden 1}
 \end{figure}
 
+Pada saat pengambilan data citra, responden 1 diposisikan untuk berada pada kondisi dengan tingkat akurasi paling ideal, dan diambil data citra sebanyak 25 \emph{frame} pada tiap kelasnya, yang berarti total data citra yang diambil sebanyak 200 data. Berdasarkan gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 1} didapatkan tingkat akurasi yang dihasilkan sebesar 88.00\%. Hal ini berarti menunjukkan adanya penurunan akurasi dari model dengan input citra dari penulis. Namun, penurunan yang terjadi tidak terlalu jauh, sehingga masih input citra masih dapat terdeteksi dengan akurasi cukup baik. 
+
 \subsubsection{Pengujian Menggunakan Data Citra dari Responden 2}
 \label{subsec:Pengujian Menggunakan Data Citra dari Responden 2}
 
-Kondisi pengambilan data citra untuk responden 2, sama dengan responden satu yaitu diposisikan untuk berada pada kondisi dengan tingkat akurasi paling ideal. Jumlah data citra yang diambil juga sebanyak 25 frame pada tiap kelasnya, sehingga total data citranya sebanyak 200 data. Hasilnya dapat dilihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 2}. Didapatkan tingkat akurasi yang dihasilkan sebesar 99.50\%. Hal ini berarti menunjukkan adanya penurunan akurasi dari model dengan input citra dari penulis. Namun, penurunan yang terjadi tidak terlalu jauh, dan bahkan lebih baik dibandingkan dengan responden 1. 
-
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.85]{gambar/pengujian-ukuran-tangan/tangan-ari.png}
+  \includegraphics[scale=0.9]{gambar/pengujian-ukuran-tangan/tangan-ari.png}
   \caption{Pengujian Menggunakan Data Citra dari Responden 2}
   \label{fig:Pengujian Menggunakan Data Citra dari Responden 2}
 \end{figure}
 
+Kondisi pengambilan data citra untuk responden 2, sama dengan responden satu yaitu diposisikan untuk berada pada kondisi dengan tingkat akurasi paling ideal. Jumlah data citra yang diambil juga sebanyak 25 \emph{frame} pada tiap kelasnya. Hasilnya dapat dilihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 2}. Didapatkan tingkat akurasi yang dihasilkan sebesar 99.50\%. Akurasi pada responden 2 ini ternyata mirip dengan input citra dari tangan penulis. Sehingga, dapat dinyatakan model bisa memprediksi dengan baik walaupun diberi input citra tangan yang berbeda.
+
 \subsubsection{Pengujian Menggunakan Data Citra dari Responden 3}
 \label{subsec:Pengujian Menggunakan Data Citra dari Responden 3}
 
-Pengambilan data pengujian dilakukan sebanyak 25 citra tiap kelasnya yang diambil pada kondisi ideal. Hasilnya dapat dilihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 3}. Didapatkan tingkat akurasi yang dihasilkan sebesar 86,50\%. Sama dengan responden 1 terdapat adanya penurunan akurasi dari model dengan input citra dari penulis, walaupun masih lebih besar dari 80\%. 
-
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.5]{gambar/pengujian-ukuran-tangan/tangan-meril.png}
+  \includegraphics[scale=0.55]{gambar/pengujian-ukuran-tangan/tangan-meril.png}
   \caption{Pengujian Menggunakan Data Citra dari Responden 3}
   \label{fig:Pengujian Menggunakan Data Citra dari Responden 3}
 \end{figure}
 
+Pengujian pada responden 3 didapatkan hasil seperti yang terlihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 3}. Didapatkan tingkat akurasi yang dihasilkan sebesar 86,50\%. Sama dengan responden 1 terdapat adanya penurunan akurasi dari model dengan input citra dari penulis, walaupun masih lebih besar dari 80\%. 
+
 \subsubsection{Pengujian Menggunakan Data Citra dari Responden 4}
 \label{subsec:Pengujian Menggunakan Data Citra dari Responden 4}
 
-Proses pengambilan data citra sama dengan responden sebelumnya, yang dilakukan pada kondisi dengan tingkat akurasi paling ideal. Jumlah data yang digunakan juga sama persis. Hasilnya dapat dilihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 4}. Didapatkan tingkat akurasi yang dihasilkan sebesar 89,50\%. Hal ini berarti menunjukkan adanya penurunan akurasi dari model dengan input citra dari penulis, walaupun akurasinya masih mendekati 90\%.
-
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.5]{gambar/pengujian-ukuran-tangan/tangan-bakar.png}
+  \includegraphics[scale=0.55]{gambar/pengujian-ukuran-tangan/tangan-bakar.png}
   \caption{Pengujian Menggunakan Data Citra dari Responden 4}
   \label{fig:Pengujian Menggunakan Data Citra dari Responden 4}
 \end{figure}
 
-Berdasarakan data dari keempat responden yang diambil, dapat diambil ringkasan seperti yang terlihat pada tabel \ref{tb:Hasil Pengujian dengan Variasi Ukuran Tangan}. Memang terjadi adanya penurunan akurasi apabila dibandingkan antara tangan penulis dengan menggunakan tangan responden. Namun, penurunan yang terjadi tidak signifikan, dimana saat menggunakan tangan penulis akurasi yang didapatkan sebesar 98.00\%, sedangkan saat menggunakan tangan responden lain didapatkan rata-rata akurasi sebesar 90.00\%. 
+Proses pengambilan data citra responden 4 masih sama responden sebelumnya, yang dilakukan pada kondisi dengan tingkat akurasi paling ideal. Jumlah data yang digunakan juga sama persis. Hasilnya dapat dilihat pada gambar \ref{fig:Pengujian Menggunakan Data Citra dari Responden 4}. Didapatkan tingkat akurasi yang dihasilkan sebesar 89,50\%. Hal ini berarti menunjukkan adanya penurunan akurasi dari model dengan input citra dari penulis, walaupun akurasinya masih mendekati 90\%.
+
+Berdasarakan data dari keempat responden yang diambil, dapat diambil ringkasan seperti yang terlihat pada tabel \ref{tb:Hasil Pengujian dengan Variasi Ukuran Tangan}. Memang terjadi adanya penurunan akurasi apabila dibandingkan antara tangan penulis dengan menggunakan tangan responden. Namun, penurunan yang terjadi tidak signifikan, dimana saat menggunakan tangan penulis akurasi yang didapatkan sebesar 99.00\%, sedangkan saat menggunakan tangan responden lain didapatkan rata-rata akurasi sebesar 90.00\%. 
 
 \begin{longtable}{|c|c|c|c|c|}
   \caption{Hasil Pengujian dengan Variasi Ukuran Tangan}
@@ -429,13 +676,165 @@ Berdasarakan data dari keempat responden yang diambil, dapat diambil ringkasan s
   \hline
 \end{longtable}
 
+\subsection{Pengujian Waktu Respon}
+\label{subsec:Pengujian Waktu Respon}
+Pengujian \emph{response time} dilakukan dengan tujuan untuk mengetahui seberapa cepat jarak waktu antara prediksi tangan dengan jalannya fungsi pada PowerPoint. Hal ini penting karena dapat mempengaruhi \emph{user experience} saat mengontrol presentasi. Hasil pengujiannya dibagi dalam tiap kelas. Pada kelas \emph{next slide} hasilnya dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Next Slide}, sedangkan untuk kelas \emph{previous slide} ada pada Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Previous Slide}. Pada kelas \emph{next slide} waktu respon rata-ratanya sebesar 138,4 \emph{miliseconds}. Kelas \emph{previous slide} didapatkan rata-rata waktu responnya sebesar 139,7. Rata-rata waktu respon \emph{next slide} dan \emph{previous slide} tidak terjadi perbedaan yang jauh karena penerapan fungsinya yang mirip. 
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{next slide}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Next Slide}\\
+  \hline
+  \rowcolor[HTML]{FFFFFF}
+  \textbf{No.} & \textbf{Jenis Kontrol} & \textbf{Waktu Respon (ms)} \\
+  \hline
+  1 & \emph{Next Slide} & 267 \\
+  2 & \emph{Next Slide} & 100 \\
+  3 & \emph{Next Slide} & 133 \\
+  4 & \emph{Next Slide} & 117 \\
+  5 & \emph{Next Slide} & 100 \\
+  6 & \emph{Next Slide} & 183 \\
+  7 & \emph{Next Slide} & 100 \\
+  8 & \emph{Next Slide} & 167 \\
+  9 & \emph{Next Slide} & 117 \\
+  10 & \emph{Next Slide} & 100 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 138,4 \\
+  \hline
+\end{longtable}
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{previous slide}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Previous Slide}\\
+  \hline
+  \endhead
+  No. & Jenis Kontrol & Waktu Respon (ms) \\
+  \hline
+  1 & \emph{Previous Slide} & 100 \\
+  2 & \emph{Previous Slide} & 117 \\
+  3 & \emph{Previous Slide} & 150 \\
+  4 & \emph{Previous Slide} & 183 \\
+  5 & \emph{Previous Slide} & 100 \\
+  6 & \emph{Previous Slide} & 167 \\
+  7 & \emph{Previous Slide} & 117 \\
+  8 & \emph{Previous Slide} & 183 \\
+  9 & \emph{Previous Slide} & 180 \\
+  10 & \emph{Previous Slide} & 100 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 139,7 \\
+  \hline
+\end{longtable}
+
+Pada kelas \emph{zoom}, hasil waktu responnya dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Zoom Slide}. Rata-rata waktu respon yang didapatkan adalah sebesar 238,7 \emph{miliseconds}. Hasil ini lebih lama dibandingkan kelas \emph{next slide} ataupun \emph{previous slide} karena penerapannya yang lebih memerlukan beberapa fungsi untuk dijalankan.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{Zoom}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Zoom Slide}\\
+  \hline
+  \rowcolor[HTML]{FFFFFF}
+  \textbf{No.} & \textbf{Jenis Kontrol} & \textbf{Waktu Respon (ms)} \\
+  \hline
+  1 & \emph{Zoom} & 300 \\
+  2 & \emph{Zoom} & 250 \\
+  3 & \emph{Zoom} & 217 \\
+  4 & \emph{Zoom} & 233 \\
+  5 & \emph{Zoom} & 150 \\
+  6 & \emph{Zoom} & 267 \\
+  7 & \emph{Zoom} & 220 \\
+  8 & \emph{Zoom} & 250 \\
+  9 & \emph{Zoom} & 283 \\
+  10 & \emph{Zoom} & 217 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 238,7 \\
+  \hline
+\end{longtable}
+
+Dalam waktu respon kelas \emph{pointer}, hasil yang didapatkan dapat dilihat dalam Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Pointer Slide}. Rata-rata yang didapatkan untuk waktu responnya adalah sebesar 171 \emph{miliseconds}. Hasil ini tidak jauh beda dengan waktu respon kontrol navigasi karena proses penerapannya menerapkan jumlah fungsi yang mirip sehingga secara komputasi tidak terlalu berat.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{Pointer}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Pointer Slide}\\
+  \hline
+  \rowcolor[HTML]{FFFFFF}
+  \textbf{No.} & \textbf{Jenis Kontrol} & \textbf{Waktu Respon (ms)} \\
+  \endhead
+  \hline
+  1 & \emph{Pointer} & 117 \\
+  2 & \emph{Pointer} & 100 \\
+  3 & \emph{Pointer} & 133 \\
+  4 & \emph{Pointer} & 283 \\
+  \hline
+  5 & \emph{Pointer} & 110 \\
+  6 & \emph{Pointer} & 167 \\
+  7 & \emph{Pointer} & 250 \\
+  8 & \emph{Pointer} & 183 \\
+  9 & \emph{Pointer} & 267 \\
+  10 & \emph{Pointer} & 100 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 171 \\
+  \hline
+\end{longtable}
+
+Waktu respon untuk kelas \emph{pen}, dapat dilihat dalam Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Pen Slide}, yang dimana hasil rata-rata waktu responnya diangka 292 \emph{miliseconds}. Kelas ini memiliki waktu respon paling lama dibandingkan yang lain karena proses komputasi yang terjadi lebih banyak. Terdapat beberapa fungsi yang dipanggil serta dilakukan juga proses \emph{tracking} titik saat sedang menggambar. 
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{Pen}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Pen Slide}\\
+  \hline
+  \rowcolor[HTML]{FFFFFF}
+  \textbf{No.} & \textbf{Jenis Kontrol} & \textbf{Waktu Respon (ms)} \\
+  \hline
+  1 & \emph{Pen} & 333 \\
+  2 & \emph{Pen} & 217 \\
+  3 & \emph{Pen} & 220 \\
+  4 & \emph{Pen} & 383 \\
+  5 & \emph{Pen} & 350 \\
+  6 & \emph{Pen} & 217 \\
+  7 & \emph{Pen} & 283 \\
+  8 & \emph{Pen} & 267 \\
+  9 & \emph{Pen} & 317 \\
+  10 & \emph{Pen} & 333 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 292 \\
+  \hline
+\end{longtable}
+
+Pada kelas \emph{erase}, waktu responnya dapat dilihat dalam Tabel \ref{tb:Hasil Pengujian Waktu Respon Kelas Erase Slide}. Waktu rata-rata responnya adalah sebesar 131,4 \emph{miliseconds}. Kelas ini menjadi kelas dengan waktu respon tercepat karena memiliki fungsi yang jauh lebih simpel sehingga tidak banyak terjadi proses komputasi apabila dibandingkan dengan kelas yang lain.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Waktu Respon Kelas \emph{Erase}}
+  \label{tb:Hasil Pengujian Waktu Respon Kelas Erase Slide}\\
+  \hline
+  \rowcolor[HTML]{FFFFFF}
+  \textbf{No.} & \textbf{Jenis Kontrol} & \textbf{Waktu Respon (ms)} \\
+  \endhead
+  \hline
+  1 & \emph{Erase} & 100 \\
+  2 & \emph{Erase} & 112 \\
+  3 & \emph{Erase} & 105 \\
+  4 & \emph{Erase} & 117 \\
+  5 & \emph{Erase} & 150 \\
+  6 & \emph{Erase} & 167 \\
+  7 & \emph{Erase} & 180 \\
+  8 & \emph{Erase} & 100 \\
+  9 & \emph{Erase} & 150 \\
+  \hline
+  10 & \emph{Erase} & 133 \\
+  \hline
+  \multicolumn{2}{|c|}{Rata-Rata} & 131,4 \\
+  \hline
+\end{longtable}
+
+% \subsection{Pengujian Variasi Posisi Tangan Terhadap Kamera}
+% \label{subsec:Pengujian Variasi Posisi Tangan Terhadap Kamera}
+% tes
+
 \subsection{Pengujian Menggunakan Model CNN yang Berbeda}
 Pengujian ini bertujuan untuk menguji performa apabila menggunakan model yang lain. Terdapat tiga model yang digunakan yaitu Resnet50, VGG16, dan MobileNet. Pengujian ini dilakukan dengan menguji semua variasi yang sama dengan model yang penulis buat sendiri. Berikut adalah hasil pengujian tiap modelnya.
 
-\subsection{Pengujian Menggunakan Model Resnet50}
-\label{subsec:Pengujian Menggunakan Model Resnet50}
+\subsubsection{Pengujian Menggunakan Model Resnet50}
+\label{subsubsec:Pengujian Menggunakan Model Resnet50}
 
-Pada pengujian pertama, model yang digunakan untuk diuji performanya adalah ResNet50. Model ResNet diusulkan dengan penggunaan metode bernama \emph{Deep Residual Learning for Image Recognition} oleh Kaiming He, Xiangyu Zhang, Shaoqing Ren dan Jian Sun. Model ini memiliki jumlah layer yang jauh lebih banyak dibandingkan model yang dibuat penulis, yaitu berjumlah 50 layer \parencite{Kaiming2015}. Hasil pengujiannya dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Menggunakan model ResNet50}.
+Pada pengujian pertama, model yang digunakan untuk diuji performanya adalah ResNet50. Model ResNet diusulkan dengan penggunaan metode bernama \emph{Deep Residual Learning for Image Recognition} oleh Kaiming He, Xiangyu Zhang, Shaoqing Ren dan Jian Sun. Model ini memiliki jumlah \emph{layer} yang jauh lebih banyak dibandingkan model yang dibuat penulis, yaitu berjumlah 50 \emph{layer} \parencite{Kaiming2015}. Hasil pengujiannya dapat dilihat pada Tabel \ref{tb:Hasil Pengujian Menggunakan model ResNet50}.
 
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -449,6 +848,10 @@ Pada pengujian pertama, model yang digunakan untuk diuji performanya adalah ResN
     Pengujian Jarak 60 cm & 200 & 190 & 10 & 95 \\ \hline
     Pengujian Jarak 80 cm & 200 & 195 & 5 & 97.5 \\ \hline
     Pengujian Jarak 100 cm & 200 & 190 & 10 & 95 \\ \hline
+    Pengujian Jarak 150 cm & 200 & 166 & 34 & 83,00 \\ \hline
+    Pengujian Jarak 200 cm & 200 & 117 & 83 & 58.50 \\ \hline
+    Pengujian Jarak 250 cm & 200 & 50 & 150 & 25.00 \\ \hline
+    Pengujian Jarak 300 cm & 200 & 32 & 168 & 16.00 \\ \hline
     Pengujian Cahaya Terang & 200 & 189 & 11 & 97.5 \\ \hline
     Pengujian \newline Cahaya Redup & 200 & 190 & 10 & 95 \\ \hline
     Pengujian Cahaya Gelap & 200 & 195 & 5 & 94.5 \\ \hline
@@ -460,25 +863,27 @@ Pada pengujian pertama, model yang digunakan untuk diuji performanya adalah ResN
 
 Berdasarkan Tabel \ref{tb:Hasil Pengujian Menggunakan model ResNet50}, dalam pengujian jarak mendapatkan hasil akurasi rata-rata sebesar 96,25\%, dimana akurasi tertingginya ada pada angka 97,5\% dan terendahnya 95\%. Hasil ini tidak jauh dibandingkan dengan model yang penulis buat yang tercantum dalam Tabel \ref{tb:Hasil Pengujian Dataset dengan Variasi Jarak}, dimana rata-rata yang didapatkan sebesar 97.5\%.
 
-Sedangkan, untuk pengujian cahaya akurasi sama dengan model yang penulis buat yang dimana akurasinya mengalami penurunan seiring dengan kurangnya cahaya yang masuk. Namun untuk kondisi yang sangat gelap, akurasinya terhitung lebih baik dibandingkan model yang dibuat penulis dimana akurasinya sebesar 94.5\% dibandingkan dengan 89.00\%.
-
-Jenis pengujian yang terakhir adalah menggunakan tangan responden yang berbeda-beda. Akurasi yang dihasilkan lebih besar dari model yang penulis buat. Rata-rata yang didapatkan model ini adalah sebesar 91,25\% dibandingkan dengan 90.00\%.
-
 \begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.74]{gambar/pengujian-fps/grafik-pengujian-fps-resnet.png}
+  \includegraphics[scale=0.75]{gambar/pengujian-fps/grafik-pengujian-fps-resnet.png}
   \caption{Grafik Pengujian \emph{Frame Rate} Model Resnet50}
   \label{fig:Grafik Pengujian Frame Rate Model Resnet50}
 \end{figure}
 
+Sedangkan, untuk pengujian cahaya akurasi sama dengan model yang penulis buat yang dimana akurasinya mengalami penurunan seiring dengan kurangnya cahaya yang masuk. Namun untuk kondisi yang sangat gelap, akurasinya terhitung lebih baik dibandingkan model yang dibuat penulis dimana akurasinya sebesar 94.5\% dibandingkan dengan 89.00\%.
+
+
+Pada jenis pengujian menggunakan tangan responden yang berbeda-beda. Akurasi yang dihasilkan lebih besar dari model yang penulis buat. Rata-rata yang didapatkan model ini adalah sebesar 91,25\% dibandingkan dengan 90.00\%.
+
+
 Selain pengujian yang disebutkan pada Tabel \ref{tb:Hasil Pengujian Menggunakan model ResNet50}, terdapat pengujian \emph{frame rate} untuk mengukur performa model dalam memprediksi citra. Hasilnya terdapat pada Gambar \ref{fig:Grafik Pengujian Frame Rate Model Resnet50}, dimana rata-rata nilai FPS-nya berada pada angka 11.66 FPS. Hasil ini lebih kecil dibandingkan dengan model yang dibuat penulis dimana FPS yang didapatkan sebesar 20.86 FPS. 
 
-Berdasarkan analisa diatas bisa disimpulkan bahwa akurasi yang dihasilkan model \emph{ResNet-50} jika dibandingkan dengan model yang penulis buat dan diuji di kondisi ideal hasilnya masih lebih kecil walaupun jaraknya tidak jauh, yaitu 97.5\% dibanding 98.00\%. Namun, untuk performa \emph{frame rate} model ini tergolong cukup rendah diangka 11.66 FPS. 
+Berdasarkan analisa diatas bisa disimpulkan bahwa akurasi yang dihasilkan model \emph{ResNet-50} jika dibandingkan dengan model yang penulis buat dan diuji di kondisi ideal hasilnya masih lebih kecil walaupun jaraknya tidak jauh, yaitu 97.5\% dibanding 99.00\%. Namun, untuk performa \emph{frame rate} model ini tergolong cukup rendah diangka 11.66 FPS. 
 
-\subsection{Pengujian Menggunakan Model VGG 16}
-\label{subsec:Pengujian Menggunakan Model VGG 16}
+\subsubsection{Pengujian Menggunakan Model VGG 16}
+\label{subsubsec:Pengujian Menggunakan Model VGG 16}
 
-VGG16 merupakan arsitektur Convolutional Neural Network (CNN) yang digunakan untuk memenangkan kompetisi ILSVR (Imagenet) 2014. Model ini dianggap sebagai salah satu arsitektur model untuk visi komputer terbaik hingga saat ini. Angka 16 dalam nama model ini mengartikan bahwa model ini memiliki 16 lapisan pembobot. Hal yang menjadi kelebihan tentang VGG16 adalah penggunaan hyperparameter yang tidak banyak. Mereka fokus menggunakan lapisan konvolusi filter 3x3 pada langkah 1, dan selalu menggunakan padding yang sama dan lapisan filter maxpool 2x2 pada langkah 2. Ini mengikuti pengaturan ini agar konsisten di seluruh lapisan arsitektur convolutional dan max pooling. Pada akhir layernya sendiri memiliki 2 Fully-Connected layer diikuti oleh softmax untuk output.
+VGG16 merupakan arsitektur Convolutional Neural Network (CNN) yang digunakan untuk memenangkan kompetisi ILSVR (Imagenet) 2014. Model ini dianggap sebagai salah satu arsitektur model untuk visi komputer terbaik hingga saat ini. Angka 16 dalam nama model ini mengartikan bahwa model ini memiliki 16 lapisan pembobot. Hal yang menjadi kelebihan tentang VGG16 adalah penggunaan hyperparameter yang tidak banyak. Mereka fokus menggunakan lapisan konvolusi filter 3x3 pada langkah 1, dan selalu menggunakan \emph{padding} yang sama dan lapisan filter maxpool 2x2 pada langkah 2. Ini mengikuti pengaturan ini agar konsisten di seluruh lapisan arsitektur convolutional dan max pooling. Pada akhir layernya sendiri memiliki 2 \emph{fully connected layer} diikuti oleh softmax untuk \emph{output}.
 
 \begin{longtable}[!htb]{|M{25mm}|M{30mm}|M{30mm}|M{30mm}|c|}
   \caption{Hasil Pengujian Menggunakan model VGG 16}
@@ -491,6 +896,10 @@ VGG16 merupakan arsitektur Convolutional Neural Network (CNN) yang digunakan unt
   Pengujian Jarak 60 cm & 200 & 193 & 7 & 96.5 \\ \hline
   Pengujian Jarak 80 cm & 200 & 193 & 7 & 96.5 \\ \hline
   Pengujian Jarak 100 cm & 200 & 199 & 1 & 99.5 \\ \hline
+  Pengujian Jarak 150 cm & 200 & 196 & 4 & 98.00 \\ \hline
+  Pengujian Jarak 200 cm & 200 & 172 & 28 & 86.00 \\ \hline
+  Pengujian Jarak 250 cm & 200 & 141 & 59 & 70.50 \\ \hline
+  Pengujian Jarak 300 cm & 200 & 101 & 99 & 50.50 \\ \hline
   Pengujian Cahaya Terang & 200 & 176 & 24 & 89 \\ \hline
   Pengujian Cahaya Redup & 200 & 179 & 21 & 89.5 \\ \hline
   Pengujian Cahaya Gelap & 200 & 178 & 22 & 88 \\ \hline
@@ -502,14 +911,9 @@ VGG16 merupakan arsitektur Convolutional Neural Network (CNN) yang digunakan unt
 
 Data dalam tabel \ref{tb:Hasil Pengujian Menggunakan model VGG 16}, menunjukkan bahwa dalam pengujian jarak, akurasi malah turun saat jarak menjadi semakin dekat. Sebagai contoh, ketika jarak 100 cm akurasinya sebesar 96.5\%, namun ketika jarak 40 cm akurasinya menjadi 89\%. Walaupun rata-rata akurasinya masih diangka 94,62 \%. Namun, akurasinya lebih kecil dibandingkan dengan model yang penulis buat yang ada diangka 97.5\%.
 
-Pada pengujian cahaya, akurasinya juga lebih kecil dibanding model yang dibuat penulis. Akurasi model pada pengujian cahaya ini dikondisi terangnya ada pada angka 89\%, sedangkan model yang penulis buat ketika kondisi terangnya ada pada 98\%. Walaupun pada kondisi yang benar-benar gelap akurasi yang dihasilkan tidak jauh beda diangka sekitar 88\%.
+Pada pengujian cahaya, akurasinya juga lebih kecil dibanding model yang dibuat penulis. Akurasi model pada pengujian cahaya ini dikondisi terangnya ada pada angka 89\%, sedangkan model yang penulis buat ketika kondisi terangnya ada pada 99\%. Walaupun pada kondisi yang benar-benar gelap akurasi yang dihasilkan tidak jauh beda diangka sekitar 88\%.
 
 Dalam pengujian menggunakan tangan dari beberapa responden, hasil tingkat akurasi yang didapatkan kurang stabil atau konsisten. Sebagai contoh, pada responden ke-4 akurasi yang dihasilkan sebesar 92\%. Namun, begitu diterapkan pada tangan dari responden ke-3, akurasinya turun pada angka 67.5\%.
-
-Penurunan performa model ini juga terjadi pada pengujian \emph{frame rate}. Berdasarkan grafik pada Gambar \ref{fig:Grafik Pengujian Frame Rate Model VGG 16}, didapatkan data bahwa rata-rata FPS yang dihasilkan sebesar 11,96 FPS. Hasil ini lebih kecil dibandingkan model yang dibuat penulis dimana mendapatkan 20,86 FPS.
-
-Melalui analisa diatas, dapa dikatakan bahwa akurasi yang dihasilkan model \emph{VGG 16} angkanya lebih kecil jika dibandingkan dengan model yang penulis buat, terutama pada kondisi saat menggunakan tangan dari responden yang tidak ada pada dataset. Performa \emph{frame rate} juga lebih kecil hasilnya karena hanya dapat memproses sampai 11.96 FPS.
-\newpage
 
 \begin{figure}[!htb]
   \centering
@@ -518,10 +922,14 @@ Melalui analisa diatas, dapa dikatakan bahwa akurasi yang dihasilkan model \emph
   \label{fig:Grafik Pengujian Frame Rate Model VGG 16}
 \end{figure}
 
-\subsection{Pengujian Menggunakan Model MobileNet}
-\label{subsec:Pengujian Menggunakan Model MobileNet}
+Penurunan performa model ini juga terjadi pada pengujian \emph{frame rate}. Berdasarkan grafik pada Gambar \ref{fig:Grafik Pengujian Frame Rate Model VGG 16}, didapatkan data bahwa rata-rata FPS yang dihasilkan sebesar 11,96 FPS. Hasil ini lebih kecil dibandingkan model yang dibuat penulis dimana mendapatkan 20,86 FPS.
 
-MobileNets merupakan salah satu CNN yang seperti namanya, dapat digunakan pada perangkat mobile. Peneliti dari Google telah menciptakan arsitektur CNN yang dapat mengatasi kebutuhan resource komputasi yang berlebihan. Perbedaan mendasar antara arsitektur MobileNet dengan arsitektur CNN biasanya adalah penggunaan layer atau lapisan konvolusional dengan ketebalan filter yang sesuai dengan ketebalan citra masukan. MobileNet membagi konvolusi menjadi \emph{depthwise convolution} dan \emph{pointwise convolution}.
+Melalui analisa diatas, dapat dikatakan bahwa akurasi yang dihasilkan model \emph{VGG 16} angkanya lebih kecil jika dibandingkan dengan model yang penulis buat, terutama pada kondisi saat menggunakan tangan dari responden yang tidak ada pada dataset. Performa \emph{frame rate} juga lebih kecil hasilnya karena hanya dapat memproses sampai 11.96 FPS.
+
+\subsubsection{Pengujian Menggunakan Model MobileNet}
+\label{subsubsec:Pengujian Menggunakan Model MobileNet}
+
+MobileNets merupakan salah satu model CNN yang seperti namanya, dapat digunakan pada perangkat mobile. Peneliti dari Google telah menciptakan arsitektur CNN yang dapat mengatasi kebutuhan resource komputasi yang berlebihan. Perbedaan mendasar antara arsitektur MobileNet dengan arsitektur CNN biasanya adalah penggunaan \emph{layer} atau lapisan konvolusional dengan ketebalan filter yang sesuai dengan ketebalan citra masukan.
 
 \begin{longtable}[!htb]{|M{25mm}|M{30mm}|M{30mm}|M{30mm}|c|}
   \caption{Hasil Pengujian Menggunakan Model MobileNet}
@@ -534,6 +942,10 @@ MobileNets merupakan salah satu CNN yang seperti namanya, dapat digunakan pada p
   Pengujian Jarak 60 cm & 200 & 200 & 0 & 100 \\ \hline
   Pengujian Jarak 80 cm & 200 & 200 & 0 & 100 \\ \hline
   Pengujian Jarak 100 cm & 200 & 200 & 0 & 100 \\ \hline
+  Pengujian Jarak 150 cm & 200 & 188 & 12 & 94.00 \\ \hline
+  Pengujian Jarak 200 cm & 200 & 139 & 61 & 69.50 \\ \hline
+  Pengujian Jarak 250 cm & 200 & 124 & 76 & 62.00 \\ \hline
+  Pengujian Jarak 300 cm & 200 & 118 & 82 & 59.00 \\ \hline
   Pengujian Cahaya Terang & 200 & 193 & 7 & 96.5 \\ \hline
   Pengujian Cahaya Redup & 200 & 193 & 7 & 96.5 \\ \hline
   Pengujian Cahaya Gelap & 200 & 192 & 8 & 96 \\ \hline
@@ -556,7 +968,7 @@ Pengujian yang terakhir yaitu menggunakan variasi dari tangan responden, didapat
   \label{fig:Grafik Pengujian Frame Rate Model MobileNet}
 \end{figure}
 
-Sedangkan, dalam pengujian \emph{frame rate}, model \emph{MobileNet} ini masih lebih tinggi dibandingkan model \emph{Resnet50} maupun \emph{VGG 16}. Dapat dilihat dalam grafik Gambar \ref{fig:Grafik Pengujian Frame Rate Model MobileNet}, rata-rata yang dihasilkan sebesar 17.26 FPS. Namun, FPS dari model ini masih lebih kecil dibandingkan model yang dibuat oleh penulis. Karena memang dari sisi jumlah layer dan hasil akhir ukuran file model jauh lebih kecil. Pada model \emph{MobileNet} ukuran file modelnya sebesar 136 MB. Sedangkan model yang dibuat penulis ukuran filenya hanya sebesar 43 MB saja.
+Sedangkan, dalam pengujian \emph{frame rate}, model \emph{MobileNet} ini masih lebih tinggi dibandingkan model \emph{Resnet50} maupun \emph{VGG 16}. Dapat dilihat dalam grafik Gambar \ref{fig:Grafik Pengujian Frame Rate Model MobileNet}, rata-rata yang dihasilkan sebesar 17.26 FPS. Namun, FPS dari model ini masih lebih kecil dibandingkan model yang dibuat oleh penulis. Karena memang dari sisi jumlah \emph{layer} dan hasil akhir ukuran file model jauh lebih kecil. Pada model \emph{MobileNet} ukuran file modelnya sebesar 136 MB. Sedangkan model yang dibuat penulis ukuran filenya hanya sebesar 43 MB saja.
 
 Berdasarkan penyajian data dan analisa ini dapat dikatakan bahwa model \emph{MobileNet} memiliki performa yang paling baik diantara semua model yang diuji pada tugas akhir ini. Tingkat akurasi yang dihasilkan baik pada kondisi yang ideal maupun kurang ideal, model ini masih menghasilkan semua akurasi diangka lebih besar dari 90\% semuanya. FPS yang dihasilkan juga lebih tinggi dibanding model \emph{Resnet50} dan \emph{VGG 16} dengan angka 17,26 FPS.
 
@@ -565,40 +977,8 @@ Berdasarkan penyajian data dan analisa ini dapat dikatakan bahwa model \emph{Mob
 
 Skenario pengujian yang terakhir adalah pengujian \emph{user experience} dimana dalam pengujian ini terdapat beberapa responden yang diminta untuk mencoba program yang dibuat. Mereka kemudian diminta untuk menjawab beberapa pertanyaan mengenai seberapa baik pengalaman penggunaan mereka dalam bentuk kuesioner. Melalui data tersebut dapat menguji apakah program ini dapat lebih baik dibandingkan dengan cara kontrol presentasi lain yang sudah tersedia saat ini.
 
-\subsubsection{Model Kuesioner yang Digunakan}
-\label{subsubsec:Model Kuesioner yang Digunakan}
-Terdapat beberapa cara dalam menguji \emph{user experience}, Salah satunya dengan \emph{User Experience Questionare} (UEQ). UEQ berisi kuesioner yang mudah serta efisien, dan berguna untuk mengukur \emph{user experience} pada sebuah produk yang interaktif. \emph{User Experience} disini didefinisikan sebagai persepsi dan tanggapan seseorang yang dihasilkan saat suatu produk tersebut digunakan. Dengan demikian, \emph{User Experience} dipandang sebagai konsep yang mencakup semua jenis reaksi emosional, kognitif atau fisik mengenai produk jadi yang konkret atau bahkan hanya produk yang masih diasumsikan pembuatannya. Penilaian penggunaan produk ini dapat dinilai baik saat sebelum, selama dan setelah digunakan \parencite{AndreasHinderks}. 
-
-UEQ mengukur menggunakan kuesioner yang berisi skala dan mencakup kesan komprehensif tentang (\emph{User Experience}). Terdapat enam skala penilaian akhir dalam UEQ, berikut rinciannya.
-
-\begin{enumerate}[nolistsep]
-  \item\emph{Attractiveness}. \emph{Attractiveness} atau daya tarik menilai kesan secara keseluruhan dari suatu produk. Penilaian ini mengukur apakah pengguna cenderung menyukai atau tidak menyukai produk yang diuji. Oleh karenanya, produk harus dibuat untuk terlihat menarik, menyenangkan, ramah pengguna dan menyenangkan. 
-  \item\emph{Perspicuity}. \emph{Perspicuity} atau kejelasan adalah bagian yang menilai seberapa mudah produk untuk dikenali dan dipelajari cara penggunaannya. Sehingga produk harus dibuat untuk bisa melakukan tugas tertentu dengan cepat, efisien, dan dengan cara yang pragmatis.
-  \item\emph{Efficiency}. \emph{Efficiency} merupakan penilaian yang mengukur apakah pengguna bisa menyelesaikan fungsi atau fitur tertentu dengan melalui usaha yang sedikit mungkin. Selain itu, reaksi dari produk apakah dapat bereaksi dengan cepat atau tidak. Karena itu, produk harus sederhana, dan mudah dipelajari.
-  \item\emph{Dependability}. \emph{Dependability} atau ketepatan menilai apakah interaksi dengan produk ada dibawah kendali dari pengguna. Penilaian ini berkaitan dengan tingkat keakuratan sehingga interaksi yang dihasilkan sesuai dengan prediksi dari pengguna. Hal ini juga berhubungan dengan tingkat keamanan yang dihasilkan dari produk, karena apabila output yang terjadi tidak sesuai dengan yang diharapkan, dapat menimbulkan kesalahan prediksi yang tidak dapat diantisipasi oleh pengguna . Sehingga, item ini menilai apakah produk dapat diprediksi, aman, dan memenuhi harapan pengguna atau tidak.
-  \item\emph{Stimulation}. \emph{Stimulation} adalah bagian penilaian yang dapat memiliki efek rangsangan perasaan positif. Perasaan yang timbul ini bisa perasaan menarik, menyenangkan, memotivasi, ataupun seru saat menggunakan produk. Oleh karena itu, produk harus dirancang sedemikian rupa hingga dapat menimbulkan efek rangsangan perasaan menarik dan menyenangkan.
-  \item\emph{Novelty}. \emph{Novelty} atau kebaruan merupakan bagian pengukuran yang menilai seberapakah kreatif dan inovatifnya suatu produk. Apabila suatu produk itu memilki nilai inovasi dan kreatif didalamnya, tentu dapat menimbulkan kesan menarik minat bagi pengguna. Sehingga, produk harus memiliki ide awal yang dirancang secara inovatif dan kreatif, serta menggunakan teknologi yang sesuai dengan perkembangan zaman.
-\end{enumerate}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=1.5]{gambar/pengujian-user-experience/soal-kuesioner.png}
-  \caption{Soal Kuesioner}
-  \label{fig:Soal Kuesioner}
-\end{figure}
-
-Pertanyaan yang ada pada kuesioner ini berjumlah 26 item. Setiap item ini menunjukkan skala satu sampai tujuh, dimana penilaian positifnya ini tergantung pada letak item tiap nomor soalnya. Sebagai contoh, dapat dilihat pada gambar \ref{fig:Soal Kuesioner} dimana pada item nomor satu menyenangkan ada pada sisi kanan. Sehingga, semakin skalanya kearah kanan, maka semakin positif penilaiannya. Namun, pada soal nomor tiga, penilaian kreatif ada pada sisi kiri. Hal ini membuat penilaian positifnya justru ada pada skala yang semakin kecil. 
-
-Tujuan dari dibuatnya pertanyaan seperti ini, agar pengguna yang mengisi kuesioner bisa dapat menilai lebih objektif dan teliti. Apabila penilaian positifnya semuanya ada pada sisi kanan, dikhawatirkan beberapa responden tidak melihat item pada tiap soalnya dan hanya mengisi di sisi yang positif semua atau negatif semua.  
-
-Berdasarkan pertanyaan dalam tiap item kuesioner, dikumpulkan dan dianalisis penilaiannya seperti apa. Dalam penggunaan UEQ, sudah terdapat \emph{tools} yang dapat digunakan untuk menilai output dari pengujian ini. Outputnya berupa diagram yang dengan nilai tertentu dari setiap enam skala penilaian dalam UEQ yaitu daya tarik, kejelasan, efisiensi, ketepatan, stimulasi, dan kebaruan.
-
 \subsubsection{Distribusi Responden}
 \label{subsubsec:Distribusi Responden}
-
-Pengambilan data kuesioner dilakuakan pada area kampus, dimana umumnya responden memiliki latar belakang sebagai pelajar atau mahasiswa. Alasan pengambilan responden dengan latar belakang tersebut karena mereka adalah salah satu bagian masyarakat yang paling sering melakukan kegiatan presentasi. Sehingga, sasaran responden dianggap tepat dalam pengujian kali ini. 
-
-Jika dilihat berdasarkan usia, responden yang mengisi kuesioner berada pada rentang usia antara 21 sampai 22 tahun. Sedangkan berdasarkan jenis kelamin didominasi oleh pria dengan rincian 86\% pria dan 14\% wanita seperti yang terlihat pada Gambar \ref{fig:Persebaran Data Gender}  
 
 \begin{figure}[!htb]
   \centering
@@ -607,14 +987,19 @@ Jika dilihat berdasarkan usia, responden yang mengisi kuesioner berada pada rent
   \label{fig:Persebaran Data Gender}
 \end{figure}
 
+Pengambilan data kuesioner dilakuakan pada area kampus, dimana umumnya responden memiliki latar belakang sebagai pelajar atau mahasiswa. Alasan pengambilan responden dengan latar belakang tersebut karena mereka adalah salah satu bagian masyarakat yang paling sering melakukan kegiatan presentasi. Sehingga, sasaran responden dianggap tepat dalam pengujian kali ini. 
+
+Jika dilihat berdasarkan usia, responden yang mengisi kuesioner berada pada rentang usia antara 21 sampai 22 tahun. Sedangkan berdasarkan jenis kelamin didominasi oleh pria dengan rincian 86\% pria dan 14\% wanita seperti yang terlihat pada Gambar \ref{fig:Persebaran Data Gender}  
+
+
 \subsubsection{Hasil Analisa Kuesioner}
 \label{subsubsec:Hasil Analisa Kuesioner}
 
-Berdasarkan pengumpulan kuesioner dari responden yang disebutkan pada \ref{subsubsec:Distribusi Responden}, data dimasukkan kedalam \emph{'tool'} yang disediakan dari metode UEQ. Output yang dihasilkan \emph{'tool'} ini berupa data grafis yang menunjukkan seberapa positif atau negatif evaluasi yang diberikan oleh responden. 
+Berdasarkan pengumpulan kuesioner dari responden yang disebutkan pada \ref{subsubsec:Distribusi Responden}, data dimasukkan kedalam \emph{'tool'} yang disediakan dari metode UEQ. \emph{Output} yang dihasilkan \emph{'tool'} ini berupa data grafis yang menunjukkan seberapa positif atau negatif evaluasi yang diberikan oleh responden. 
 
 Nilai untuk satu item digambarkan dalam skala antara 1 sampai 3. Nilai antara -0,8 dan 0,8 mewakili evaluasi yang kurang lebih dianggap netral. Sedangkan, nilai lebih dari 0,8 mewakili evaluasi atau penilaian yang positif. Sebaliknya, nilai kurang dari -0,8 mewakili evaluasi atau penilaian negatif. Jadi, apabila hasil penilaian ada pada kisaran skala antara -3 berarti sangat buruk dan +3 berarti sangat baik. 
 
-\emph{Ouput} dari grafis yang pertama adalah terkait dengan rata-rata jawaban responden pada setiap item soal. Seperti yang tertera pada Gambar \ref{fig:Jawaban Rata-rata Setiap Item Soal}, rata-rata jawaban dari responden memberikan penilaian yang bersifat positif karena nilainya lebih besar dari 0,8. Terdapat beberapa item penilaian yang dinilai paling positif yaitu item kemudahan untuk dapat dipahami, baiknya program, keamanan saat digunakan, dan kepraktisan penggunaan. 
+\emph{Ouput} dari grafis yang pertama adalah terkait dengan rata-rata jawaban responden pada setiap item soal yang tertera pada Gambar \ref{fig:Jawaban Rata-rata Setiap Item Soal}. Sedangkan, untuk keterangan dari item tiap soalnya dapat dilihat pada Tabel \ref{tb:Keterangan Setiap Nomor Item Soal}. Rata-rata jawaban dari responden memberikan penilaian yang bersifat positif karena nilainya lebih besar dari 0,8. Terdapat beberapa item penilaian yang dinilai paling positif yaitu item kemudahan untuk dapat dipahami, baiknya program, keamanan saat digunakan, dan kepraktisan penggunaan. 
 
 \begin{figure}[!htb]
   \centering
@@ -623,9 +1008,51 @@ Nilai untuk satu item digambarkan dalam skala antara 1 sampai 3. Nilai antara -0
   \label{fig:Jawaban Rata-rata Setiap Item Soal}
 \end{figure}
 
+\begin{longtable}[!htb]{|M{25mm}|M{100mm}|}
+  \caption{Keterangan Setiap Nomor Item Soal}
+  \label{tb:Keterangan Setiap Nomor Item Soal}\\
+  \hline
+  \textbf{Nomor Item Soal} & \textbf{Isi Item Soal}  \\ 
+  \hline
+  \endhead
+  1 & menyusahkan/menyenangkan \\ \hline
+  2 & tak dapat dipahami/dapat dipahami  \\ \hline
+  3 & monoton/kreatif  \\ \hline
+  4 & sulit dipelajari/mudah dipelajari  \\ \hline
+  5 & kurang bermanfaat/bermanfaat \\ \hline
+  6 & membosankan/mengasyikkan \\ \hline
+  7 & tidak menarik/menarik \\ \hline
+  8 & tak dapat diprediksi/dapat diprediksi \\ \hline
+  9 & lambat/cepat \\ \hline
+  10 & konvensional/berdaya cipta \\ \hline
+  11 & menghalangi/mendukung \\ \hline
+  12 & buruk/baik \\ \hline
+  13 & rumit/sederhana \\ \hline
+  14 & tidak disukai/menggembirakan \\ \hline
+  15 & lazim/terdepan \\ \hline
+  16 & tidak nyaman/nyaman \\ \hline
+  17 & tidak aman/aman \\ \hline
+  18 & tidak memotivasi/memotivasi \\ \hline
+  19 & tidak memenuhi ekspektasi/memenuhi ekspektasi \\ \hline
+  20 & tidak efisien/efisien \\ \hline
+  21 & membingungkan/jelas \\ \hline
+  22 & tidak praktis/praktis \\ \hline
+  23 & berantakan/terorganisasi \\ \hline
+  24 & tidak atraktif/atraktif \\ \hline
+  25 & tidak ramah pengguna/ramah pengguna \\ \hline
+  26 & konservatif/inovatif \\ \hline
+\end{longtable}
+
 Namun, terdapat penilaian yang terhitung bukan positif namun masih ada pada rentang netral. Penilaian itu terkait dengan item daya cipta dan inovasi. Maksud dari item ini adalah terkait dengan seberapa inovatif dan baru ide dari topik tugas akhir ini. Berdasarkan penilaian ini dapat dinyatakan bahwa inovasi dan ide dari tugas akhir ini memang bukan sesuatu yang sangat baru, namun tidak dapat dinyatakan tertinggal juga. 
 
-Berdasarkan semua item soal dalam kuesioner, dapat dikelompokkan menjadi enam penilaian utama yang disebutkan pada \ref{subsubsec:Model Kuesioner yang Digunakan} yaitu \emph{Attractiveness, Perspicuity, Efficiency, Dependability, Stimulation, dan Novelty}. Hasilnya dapat dilihat pada Gambar \ref{fig:Hasil Penilaian User Experience}. 
+Berdasarkan semua item soal dalam kuesioner, dapat dikelompokkan menjadi enam penilaian utama yaitu \emph{Attractiveness, Perspicuity, Efficiency, Dependability, Stimulation, dan Novelty}. Hasilnya dapat dilihat pada Gambar \ref{fig:Hasil Penilaian User Experience}. 
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=1.1]{gambar/pengujian-user-experience/hasil-tiap-penilaian.png}
+  \caption{Hasil Penilaian \emph{User Experience}}
+  \label{fig:Hasil Penilaian User Experience}
+\end{figure}
 
 Pada penilaian pertama terdapat \emph{Attractiveness} atau daya tarik yang mendapatkan poin 1,595. Hal ini menunjukkan bahwa program yang dibuat dapat dinilai terlihat menarik, menyenangkan, serta ramah untuk pengguna yang baru mencoba.
 
@@ -638,12 +1065,5 @@ Item penilaian yang keempat disebut sebagai\emph{Dependability} atau ketepatan. 
 Dalam item penilaian yang kelima ada \emph{Stimulation}. Poin yang didapatkan sebesar 1,714. Hasil penilaian ini menunjukkan bahwa pengguna mendapatkan efek rangsangan perasaan yang positif, baik itu perasaan menarik, menyenangkan, dan seru.
 
 Item Penilaian yang terakhir adalah \emph{Novelty} atau kebaruan. Dalam item penilaian ini didapatkan poin sebesar 0,964. Memang angka ini tidak terhitung cukup tinggi dibandingkan dengan penilaian sebelumnya, namun masih termasuk dalam rentang penilaian positif. Oleh karenanya, program ini masih bisa dikatakan sebagai produk kreatif dan inovatifnya, walaupun memang dinilai oleh beberapa pengguna bukan sebagai suatu ide yang benar-benar baru.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[scale=1.1]{gambar/pengujian-user-experience/hasil-tiap-penilaian.png}
-  \caption{Hasil Penilaian \emph{User Experience}}
-  \label{fig:Hasil Penilaian User Experience}
-\end{figure}
 
 Berdasarkan analisa pada pengujian \emph{user experience} dapat diambil penilaian bahwa program yang dicoba memberikan pengalaman pengguna dengan hasil reaksi evaluasi yang bersifat positif, terutama dari aspek kemudahan untuk dipahami, kepraktisan dalam penggunaan, dan memberikan pengalaman perasaan menarik dan menyenangkan.

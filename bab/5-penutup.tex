@@ -2,28 +2,49 @@
 \label{chap:penutup}
 
 % Ubah bagian-bagian berikut dengan isi dari penutup
-Dalam bab ini berisi mengenai kesimpulan berdasarkan serangkaian rangkaian pengujian yang dipaparkan dalam Bab \ref{sec:hasilpengujian}, dan disesuaikan dengan tujuan yang berusaha dicapai dalam tugas akhir ini. Pada bab ini juga, terdapat saran-saran yang diberikan dalam rangka meningkatkan dan mengembangkan penelitian selanjutnya yang terkait dengan topik tugas akhir ini. Berikut ini adalah kesimpulan dan saran yang dapat diambil. 
+Dalam bab ini berisi mengenai kesimpulan berdasarkan penelitian yang dilakukan dengan menyesuaikan tujuan yang berusaha dicapai. Pada bab ini juga, terdapat saran-saran yang diberikan dalam rangka meningkatkan dan mengembangkan penelitian selanjutnya yang terkait dengan topik tugas akhir ini. Berikut ini adalah kesimpulan dan saran yang dapat diambil. 
 
 \section{Kesimpulan}
 \label{sec:kesimpulan}
 
-Berdasarkan hasil pengujian yang sudah dipaparkan, dapat diambil beberapa kesimpulan sebagai berikut.
+Berdasarkan penelitian yang sudah dilakukan, dapat diambil beberapa kesimpulan sebagai berikut.
 
 \begin{enumerate}[nolistsep]
-  \item Klasifikasi citra dengan menggunakan metode Convolutional Neural Network (CNN) dapat digunakan untuk memprediksi citra pose tangan dengan tingkat akurasi mencapai 99.00\%. 
-  \item Pada pengujian jarak dapat disimpulkan bahwa variasi pengambilan jarak dataset sangat mempengaruhi akurasi. Dimana, jarak penurunannya akurasinya bisa mencapai 30\%.
-  \item Dari hasil pengujian variasi cahaya, disimpulkan bahwa model yang ada tidak mengalami penurunan yang signifikan baik ketika kondisi cahaya terang, redup, bahkan gelap. Penurunan yang terjadi masih dibawah 10\%.
-  \item Berdasarkan pengujian \emph{frame rate} dengan menggunakan beberapa model CNN, dapat diambil kesimpulan bahwa kompleksitas dan besar ukuran model sangat mempengaruhi performa FPS-nya. 
-  \item Dari hasil klasifikasi model yang didapatkan, dapat dihubungkan dengan berbagai fungsi navigasi ataupun penggunaan beberapa fitur kontrol dalam aplikasi Microsoft PowerPoint. 
-  \item Kontrol presentasi menggunakan pose tangan dapat memberikan respon \emph{user experience} positif yang menarik dan mudah digunakan. 
+  \item Besar nilai akurasi yang didapatkan dalam pengujian model sebesar 99,37\%, sedangkan nilai \emph{loss} yang didapatkan sebesar 0,03\%.
+  \item Berdasarkan pengujian jarak, didapatkan hasil bahwa nilai akurasi tertingginya pada jarak 40 cm dengan akurasi sebesar 99,00\%. Pada jarak 60 cm akurasinya sebesar 97,50\%, pada jarak 80 cm akurasinya 97,00\%, pada jarak 100 cm akurasinya 94,50\%, pada jarak 150 cm akurasinya sebesar 90,50\%, dan saat jarak 200 cm akurasinya sebesar 77,50\%. Sedangkan, batas jarak dimana model mulai menghasilkan akurasi lebih kecil dari 50\% dimulai saat jarak 250 cm, dimana akurasi yang didapatkan sebesar 32,50\%. Akurasi terendahnya sendiri ada pada jarak terjauh yaitu 300 cm, dengan akurasi 13,00\%.
+  \item Hasil nilai akurasi tertinggi dalam pengujian variasi kondisi cahaya adalah saat kondisi terang atau lebih dari 40 lx, dengan tingkat akurasi sebesar 99,00\%. Sedangkan nilai akurasi terendahnya pada kondisi gelap disekitar 5 lx dengan tingkat akurasi sebesar 89,00\%
+  \item Hasil akurasi pada pengujian dengan responden yang berbeda, didapatkan rata-rata sebesar 90,87\%. Dimana pada responden pertama akurasinya sebesar 88,00\%, pada responden kedua sebesar 99,50\%, pada responden ketiga sebesar 86,50\%, dan pada responden keempat sebesar 89,50\%.
+  \item Hasil rata-rata waktu respon yang didapatkan sebesar 185,2 \emph{miliseconds}, dengan rata-rata waktu respon tercepat pada kelas \emph{erase} sebesar 131,4 \emph{miliseconds}, dan waktu respon terlama pada kelas \emph{pen} sebesar 292 \emph{miliseconds}. 
+  \item Kontrol presentasi menggunakan pose tangan ini juga memberikan respon \emph{user experience} yang positif dan dinilai menarik serta mudah untuk digunakan oleh pengguna.
+  % \item Rata-rata nilai akurasi pada pengujian terhadap kedua responden adalah 87.77\% dengan
+  % nilai akurasi 85.33\% pada responden pertama dan 90.22\% pada responden kedua.
+
+  % \item Metode \emph{Convolutional Neural Network} dapat digunakan untuk memprediksi citra pose tangan dan dihubungkan dengan berbagai fitur kontrol dalam aplikasi Microsoft PowerPoint.
+  % \item 
+  % % Terjadi peningkatan akurasi dibandingkan dengan penelitian sebelumnya yang disebutkan dalam Bab \ref{chap:pendahuluan}, dimana dengan jarak 150 cm akurasi yang didapatkan naik dari 76,47\% ke 90,50\%. Sedangkan dalam kondisi ideal, 
+  % Tingkat akurasi model yang didapatkan mencapai 99,00\% dalam kondisi ideal. Kondisi ideal yang dimaksud disini ada pada kondisi jarak 40 cm, dan kondisi pencahayaan terang yaitu tidak kurang dari 40 lux.  
+  % \item Berdasarkan pengujian \emph{frame rate} dapat diambil kesimpulan bahwa kompleksitas dan besar ukuran model sangat mempengaruhi performa FPS-nya, dimana rata-rata \emph{frame rate} yang didapatkan sebesar 20,86 FPS. 
+  
+
+
+
+
+  % \item Klasifikasi citra dengan menggunakan metode Convolutional Neural Network (CNN) dapat digunakan untuk memprediksi citra pose tangan dengan tingkat akurasi mencapai 99.00\%. 
+  % \item Pada pengujian jarak dapat disimpulkan bahwa variasi pengambilan jarak dataset sangat mempengaruhi akurasi. Dimana, jarak penurunannya akurasinya bisa mencapai 30\%.
+  % \item Dari hasil pengujian variasi cahaya, disimpulkan bahwa model yang ada tidak mengalami penurunan yang signifikan baik ketika kondisi cahaya terang, redup, bahkan gelap. Penurunan yang terjadi masih dibawah 10\%.
+  % \item Berdasarkan pengujian \emph{frame rate} dengan menggunakan beberapa model CNN, dapat diambil kesimpulan bahwa kompleksitas dan besar ukuran model sangat mempengaruhi performa FPS-nya. 
+  % \item Dari hasil klasifikasi model yang didapatkan, dapat dihubungkan dengan berbagai fungsi navigasi ataupun penggunaan beberapa fitur kontrol dalam aplikasi \emph{Microsoft PowerPoint}. 
+  % \item Kontrol presentasi menggunakan pose tangan dapat memberikan respon \emph{user experience} positif yang menarik dan mudah digunakan. 
 \end{enumerate}   
 
 \section{Saran}
 \label{chap:saran}
 
-Dalam rangka pengembangan penelitian kedepan terutama yang terkait dengan topik Convolution Neural Network, pose tangan, ataupun kontrol presentasi, dapat diusulkan beberapa saran yang disebutkan sebagai berikut.
+Dalam rangka pengembangan penelitian kedepan terutama dalam topik mengenai pose tangan ataupun kontrol presentasi, dapat diusulkan beberapa saran yang sebagai berikut.
 
 \begin{enumerate}[nolistsep]
-  \item Perlu ditambahkan jumlah dataset dengan berbagai variasi jarak pada saat pengambilan dataset. Sehingga diharapkan akurasi hasil klasifikasi tetap baik meskipun diambil dari jarak yang bervariasi.
-  \item Menambahkan dataset dengan variasi ukuran tangan dari berbagai macam orang, agar akurasi yang dihasilkan lebih stabil meskipun diuji keresponden yang berbeda-beda.
+  \item Menggunakan metode yang berbeda selain \emph{Convolutional Neural Network} untuk dapat membandingkan performa yang dihasilkan.
+  \item Menambahkan tahapan \emph{preprocessing} data untuk membandingkan pengaruhnya terhadap proses pengenalan citra.
+  % \item Perlu ditambahkan jumlah dataset dengan berbagai variasi jarak pada saat pengambilan dataset. Sehingga diharapkan akurasi hasil klasifikasi tetap baik meskipun diambil dari jarak yang bervariasi.
+  % \item Menambahkan dataset dengan variasi ukuran tangan dari berbagai macam orang, agar akurasi yang dihasilkan lebih stabil meskipun diuji keresponden yang berbeda-beda.
 \end{enumerate} 

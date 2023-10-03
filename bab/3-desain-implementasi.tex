@@ -15,32 +15,48 @@ Metodologi berisi tentang langkah-langkah yang dilakukan untuk mencapai tujuan d
 \section{Dataset}
 \label{sec:dataset}
 
-Input citra digunakan sebagai dataset yang nantinya digunakan dalam proses training data. Untuk proses pengambilan dataset dimulai dengan Input citra video. Proses pengambilannya melalui kamera \emph{webcam}, dengan cara mengambil video dan membuatnya menjadi potongan frame-frame. Video yang diambil disesuaikan dengan kelas apa yang ingin diperagakan. Misalnya untuk perintah seperti pengguna \emph{"tool pen"} maka kita harus memperagakan pose \emph{pen} yang telah ditentukan sebelumnya didepan kamera. 
+Input citra digunakan sebagai dataset dalam proses \emph{training} data. Proses pengambilan dataset dimulai dengan Input citra video. Proses pengambilannya melalui kamera \emph{webcam}, dengan cara mengambil video dan membuatnya menjadi potongan \emph{frame}. Video yang diambil disesuaikan dengan kelas apa yang ingin diperagakan. Misalnya untuk perintah seperti pengguna \emph{"tool pen"} maka kita harus memperagakan pose \emph{pen} yang telah ditentukan sebelumnya didepan kamera. 
 
 Cara memperagakannya adalah dengan mengambilnya dari beberapa jarak dari dengan kamera. Supaya nantinya deteksi perintah ini dapat terbaca dari berbagai sisi jarak kamera juga. Selain jarak juga dilakukan variasi bentuk pose tangan dan pengambilan angle dibandingkan dengan kamera. Karena, satu orang dalam memeragakan pose tangan tidak selalu sama persis bentuknya dengan yang orang lainnya. 
 
-\begin{longtable}{|c|c|c|}
+% \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+% \begin{longtable}{|m{7mm}|m{40mm}|m{50mm}|}
+%   \caption{Hasil Pengambilan Dataset}
+%   \label{tb:Hasil Pengambilan Dataset}\\
+%   \hline
+%   % \textbf{No.} & \textbf{Kelas Dataset} & \textbf{Citra Dataset} \\
+%   \multicolumn{1}{|>{\centering\arraybackslash}m{7mm}|}{\textbf{No.}} 
+%   & \multicolumn{1}{>{\centering\arraybackslash}m{40mm}|}{\textbf{Kelas Dataset}} 
+%   & \multicolumn{1}{>{\centering\arraybackslash}m{50mm}|}{\textbf{Citra Dataset}}\\
+%   \hline
+%   \endhead
+% \end{longtable}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\begin{longtable}[!htb]{|M{8mm}|M{35mm}|M{60mm}|}
   \caption{Hasil Pengambilan Dataset}
   \label{tb:Hasil Pengambilan Dataset}\\
   \hline
-  \textbf{No.} & \textbf{Kelas Dataset} & \textbf{Citra Dataset} \\
+  \textbf{No.} & \textbf{Kelas Dataset} & \textbf{Citra Dataset} \\ 
   \hline
   \endhead
-  1 & Dataset \emph{Next Slide}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-next-slide.jpg} \\
+  1 & Dataset \emph{Next Slide}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-next-slide.jpg} \\
   \hline
-  2 & Dataset \emph{Previous Slide}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-previous-slide.jpg} \\
+  2 & Dataset \emph{Previous Slide}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-previous-slide.jpg} \\
   \hline
-  3 & Dataset \emph{Pointer}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-pointer.jpg} \\
+  3 & Dataset \emph{Pointer}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-pointer.jpg} \\
   \hline
-  4 & Dataset \emph{Zoom Left}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-zoom-left.jpg} \\
+  4 & Dataset \emph{Zoom Left}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-zoom-left.jpg} \\
   \hline
-  5 & Dataset \emph{Zoom Right}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-zoom-right.jpg} \\
+  5 & Dataset \emph{Zoom Right}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-zoom-right.jpg} \\
   \hline
-  6 & Dataset \emph{Pen Left}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-pen-left.jpg} \\
+  6 & Dataset \emph{Pen Left}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-pen-left.jpg} \\
   \hline
-  7 & Dataset \emph{Pen Right}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-pen-right.jpg} \\
+  7 & Dataset \emph{Pen Right}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-pen-right.jpg} \\
   \hline
-  8 & Dataset \emph{Erase}  &  \includegraphics[scale=0.2]{gambar/pengambilan-dataset/dataset-erase.jpg} \\
+  8 & Dataset \emph{Erase}  &  \includegraphics[scale=0.4]{gambar/pengambilan-dataset/dataset-erase.jpg} \\
   \hline
 \end{longtable}
 
@@ -48,30 +64,30 @@ Jumlah dan kualitas dari dataset ini juga perlu diperhatikan, karena sangat memp
 
 Pada prinsipnya, semakin banyak data akan menambah tingkat akurasi dari sebuah model. Namun, belum ditemukan satu aturan khusus yang pasti mengenai jumlah batas minimal data yang dibutuhkan untuk melatih model dengan tingkat hasil akurasi tertentu. Jumlah data tersebut bergantung pada masalah yang diselesaikan \parencite{Junghwan}. Oleh karenanya, penentuan berapa banyak jumlah data ini perlu dilihat pula hasil akurasinya. Apabila akurasi dirasa cukup maka jumlah dataset tersebut dapat dinyatakan cukup.
 
-Dalam Tabel \ref{tb:Hasil Pengambilan Dataset}, bisa dilihat bahwa pose yang dibuat berjumlah delapan. Padahal banyaknya fungsi yang ingin diterapkan berjumlah enam (\emph{next slide, previous slide, pointer, zoom, pen,} dan \emph{erase}). Hal ini dilakukan karena model yang dibuat, diharapkan dapat mendeteksi tidak hanya menggunakan salah satu tangan saja. Namun, bisa digunakan baik menggunakan tangan kanan maupun tangan kiri. 
+Dalam Tabel \ref{tb:Hasil Pengambilan Dataset}, bisa dilihat bahwa pose yang dibuat berjumlah delapan. Padahal jumlah fungsi yang ingin diterapkan berjumlah enam (\emph{next slide, previous slide, pointer, zoom, pen,} dan \emph{erase}). Hal ini dilakukan karena model yang dibuat, diharapkan dapat mendeteksi tidak hanya menggunakan salah satu tangan saja. Namun, bisa digunakan baik menggunakan tangan kanan maupun tangan kiri. 
 
 Tetapi, tidak semua pose perlu dataset dengan citra dari tangan kanan dan kiri. Karena beberapa pose memiliki kemiripan antara bentuk tangan kanan dan kiri. Dapat dilihat dalam Tabel \ref{tb:Hasil Pengambilan Dataset} bahwa pose untuk fungsi \emph{next slide, previous slide, pointer,} dan \emph{erase} hanya memiliki masing-masing satu kelas. Apabila dilakukan \emph{mirroring} pada citra tersebut hasilnya juga tidak jauh beda. Sehingga, model masih bisa mendeteksi.
 
-Namun, untuk fungsi \emph{pen} dan \emph{zoom} diperlakukan berbeda. Karena bentuk posenya apabila dibandingkan antara menggunakan tangan kanan dengan tangan kiri, terlihat perbedaan yang cukup jauh. Oleh karena itu, cara termudah untuk model dapat mendeteksi tangan kanan maupun kiri dalam pose \emph{pen} dan \emph{zoom} adalah dengan memisahnya menjadi kelas dataset yang terpisah. Hal ini lah yang membuat jumlah kelas dataset terdapat delapan, walaupun jumlah fungsi kontrol \emph{Power Point} yang ingin diterapkan hanya berjumlah enam.
+Namun, untuk fungsi \emph{pen} dan \emph{zoom} diperlakukan berbeda. Karena bentuk posenya apabila dibandingkan antara menggunakan tangan kanan dengan tangan kiri, terlihat perbedaan yang cukup jauh. Oleh karena itu, cara termudah untuk model dapat mendeteksi tangan kanan maupun kiri dalam pose \emph{pen} dan \emph{zoom} adalah dengan memisahnya menjadi kelas dataset yang terpisah. Hal ini lah yang membuat jumlah kelas dataset terdapat delapan, walaupun jumlah fungsi kontrol PowerPoint yang ingin diterapkan hanya berjumlah enam.
 
-Ukuran frame yang terlihat pada Tabel \ref{tb:Hasil Pengambilan Dataset} sendiri, perlu dipotong supaya hanya citra dari pose tangannya saja yang ditangkap. Namun, proses ini baru bisa dilakukan jika sudah dapat mendeteksi posisi tangan yaitu pada bagian proses estimasi pose. Citra yang digunakan input merupakan citra berwarna yang memiliki tiga buah kanal warna. Tiga buah kanal ini terdiri dari komponen warna RGB yaitu merah/\emph{Red} (R), green/\emph{Green} (G), dan biru/\emph{Biru} (B) yang memiliki nilai dengan rentang mulai dari 0 sampai 255 \parencite{PriyantoHidayatullah}. 
+Ukuran \emph{frame} yang terlihat pada Tabel \ref{tb:Hasil Pengambilan Dataset} sendiri, perlu dipotong supaya hanya citra dari pose tangannya saja yang ditangkap. Namun, proses ini baru bisa dilakukan jika sudah dapat mendeteksi posisi tangan yaitu pada bagian proses estimasi pose. Citra yang digunakan input merupakan citra berwarna yang memiliki tiga buah kanal warna. Tiga buah kanal ini terdiri dari komponen warna RGB yaitu merah/\emph{Red} (R), green/\emph{Green} (G), dan biru/\emph{Biru} (B) yang memiliki nilai dengan rentang mulai dari 0 sampai 255 \parencite{PriyantoHidayatullah}. 
 
-Sebuah dataset perlu dibagi menjadi dua bagian yaitu training set dan validation set. Pembagian ini diperlukan agar dapat mencegah overfitting dan untuk mengevaluasi model. Overfitting yang dimaksud disini adalah kondisi yang terjadi saat model memiliki performa yang sangat baik namun hanya terjadi untuk dataset pelatihan saja. Apabila model diberi data yang belum pernah dilihat sebelumnya, maka performa yang dihasilkan menjadi buruk.
+Sebuah dataset perlu dibagi menjadi dua bagian yaitu \emph{training set} dan \emph{validation set}. Pembagian ini diperlukan agar dapat mencegah overfitting dan untuk mengevaluasi model. Overfitting yang dimaksud disini adalah kondisi yang terjadi saat model memiliki performa yang sangat baik namun hanya terjadi untuk dataset pelatihan saja. Apabila model diberi data yang belum pernah dilihat sebelumnya, maka performa yang dihasilkan menjadi buruk.
 
-Sebagian besar data dari dataset merupakan Training set. Hal ini karena data pada training set digunakan untuk pelatihan. Apabila proses pelatihan ini selesai, dilakukan proses evaluasi kinerja dari model menggunakan data dari validation set. Jumlah, pembagian banyaknya data pada trainining set dan validation set dalam tugas akhir ini adalah 75\% : 25\%. Proses pengambilan training set dan validation set juga terpisah. Karena model idealnya tidak boleh dilatih menggunakan sample pada validation set, baik sebagian maupun seluruhnya. Sehingga antar training set dan validation set berisi data yang sepenuhnya berbeda. 
+Sebagian besar data dari dataset merupakan Training set. Hal ini karena data pada \emph{training set} digunakan untuk pelatihan. Apabila proses pelatihan ini selesai, dilakukan proses evaluasi kinerja dari model menggunakan data dari \emph{validation set}. Jumlah, pembagian banyaknya data pada trainining set dan \emph{validation set} dalam tugas akhir ini adalah 75\% : 25\%. Proses pengambilan \emph{training set} dan \emph{validation set} juga terpisah. Karena model idealnya tidak boleh dilatih menggunakan sample pada \emph{validation set}, baik sebagian maupun seluruhnya. Sehingga antar \emph{training set} dan \emph{validation set} berisi data yang sepenuhnya berbeda. 
 
 \section{Estimasi Pose}
 \label{sec:poseprediction}
 
-Estimasi pose memproses frame yang didapat dari hasil pengambilan dataset sebelumnya. Proses ini berguna untuk menentukan \emph{keypoint} untuk membuat kerangka dari pose tangan atau yang disebut \emph{landmark}. Citra tangan dari input kamera yang masih asli, diekstrak menjadi citra yang sudah terdapat kerangka posenya sehingga dapat dianalisa untuk melakukan pengklasifikasian. Dalam proses pendeteksian pose kerangka tangan, penulis menggunakan bantuan sebuah \emph{library} bernama \emph{mediapipe}. \emph{MediaPipe Hands} menggunakan \emph{machine learning} untuk menemukan 21 \emph{landmark} 3D tangan hanya dari satu frame. Tiap frame ini diproses lagi ketahapan selanjutnya bernama ekstraksi fitur. 
+Estimasi pose memproses \emph{frame} yang didapat dari hasil pengambilan dataset sebelumnya. Proses ini berguna untuk menentukan \emph{keypoint} untuk membuat kerangka dari pose tangan atau yang disebut \emph{landmark}. Citra tangan dari input kamera yang masih asli, diekstrak menjadi citra yang sudah terdapat kerangka posenya sehingga dapat dianalisa untuk melakukan pengklasifikasian. Dalam proses pendeteksian pose kerangka tangan, penulis menggunakan bantuan sebuah \emph{library} bernama MediaPipe. \emph{MediaPipe Hands} menggunakan \emph{machine learning} untuk menemukan 21 \emph{landmark} 3D tangan hanya dari satu \emph{frame}. Tiap \emph{frame} ini diproses lagi ketahapan selanjutnya bernama ekstraksi fitur. 
 
 Ekstraksi fitur merupakan bagian dari tahapan yang untuk pengenalan pola. Proses ini dilakukan agar dapat memperoleh informasi yang terkandung dalam suatu citra. Jika informasi ini telah didapatkan, maka informasi tersebut digunakan sebagai acuan untuk membedakan antara satu citra dengan citra yang lainnya. Ektraksi fitur ini dapat dilakukan, salah satunya dengan cara memisahkan antara objek dengan \emph{background}. Dalam hal ini, deteksi \emph{landmark} tangan dipisah dari \emph{background} aslinya dan diganti dengan latar berwarna hitam. Sehingga, hanya menyisakan citra berupa \emph{landmark} dari pose tangan saja tanpa ada citra tangan yang asli.   
 
 Hasil dari ekstraksi fitur tersebut, diproses lagi dengan proses \emph{localization}. Proses ini menentukan lokasi objek dengan membuat kotak pembatas pada daerah citra yang terdapat pose tangannya. Kotak pembatas inilah yang menentukan seberapa besar bagian citra yang dipotong. Apabila gambar sudah diganti dengan \emph{background} hitam, selanjutnya gambar dikumpulkan perkelas untuk dijadikan input proses \emph{training}.
 
-Berdasarkan proses \emph{localization} yang dilakuakan, citra dipotong menjadi ukuran frame sebesar 128 x 128 piksel dengan posisi menyesuaikan letak \emph{landmark} tangan. Diberikan juga \emph{padding} sebesar 64 dikiri, atas, kanan, dan bawah citra. Tujuannya agar tidak ada informasi dari ujung-ujung \emph{landmark} yang hilang karena terpotong. Hasilnya seperti yang terlihat pada gambar \ref{tb:Hasil Estimasi Pose}. Hasil dari proses ini kemudian disimpan lagi dalam folder sesuai dengan kelas dari pose yang dilakukan.
+Berdasarkan proses \emph{localization} yang dilakuakan, citra dipotong menjadi ukuran \emph{frame} sebesar 128 x 128 piksel dengan posisi menyesuaikan letak \emph{landmark} tangan. Diberikan juga \emph{padding} sebesar 64 dikiri, atas, kanan, dan bawah citra. Tujuannya agar tidak ada informasi dari ujung-ujung \emph{landmark} yang hilang karena terpotong. Hasilnya seperti yang terlihat pada gambar \ref{tb:Hasil Estimasi Pose}. Hasil dari proses ini kemudian disimpan lagi dalam folder sesuai dengan kelas dari pose yang dilakukan.
 
-\begin{longtable}{|c|c|c|}
+\begin{longtable}[!htb]{|M{8mm}|M{35mm}|M{60mm}|}
   \caption{Hasil Estimasi Pose}
   \label{tb:Hasil Estimasi Pose}\\
   \hline
@@ -103,24 +119,24 @@ Tujuan dari pembuatan model adalah dapat menghasilkan model klasifikasi yang dap
 
 \subsection{Pembuatan Model}
 
-Proses pembuatan model dicapai dengan mengatur layer serta \emph{hyperparameter}-nya. Umumnya pengaturan layer ini dibagi menjadi tiga bagian yaitu \emph{convolution layer, pooling layer,} dan \emph{fully connected layer}. Dalam pembuatannya tipe model yang digunakan adalah \emph{Sequential. Sequential} merupakan salah satu cara membuat model dalam \emph{Keras}. Cara ini membuat model dapat dibangun dari satu \emph{layer} ke\emph{layer} lainnya.
+Proses pembuatan model dicapai dengan mengatur \emph{layer} serta \emph{hyperparameter}-nya. Umumnya pengaturan \emph{layer} ini dibagi menjadi tiga bagian yaitu \emph{convolution layer, pooling layer,} dan \emph{fully connected layer}. Dalam pembuatannya tipe model yang digunakan adalah \emph{Sequential. Sequential} merupakan salah satu cara membuat model dalam \emph{Keras}. Cara ini membuat model dapat dibangun dari satu \emph{layer} ke\emph{layer} lainnya.
 
-Gambaran arsitektur layer model CNN yang digunakan dapat dilihat pada Gambar \ref{fig:cnnlayer}. \emph{Stride} atau jarak perpindahan konvolusi pada semua layer konvolusi sama yaitu satu. Artinya, filter bergeser sebesar satu kotak ukuran matriks pada setiap operasinya. Padding yang digunakan pada semua layer konvolusi dimodel ini juga sama, yaitu valid padding. Valid padding berarti tanpa menggunakan padding sama sekali. Sehingga, output yang dihasilkan (bisa disebut juga dengan \emph{feature map}) berkurang ukurannya masing-masing satu pada kiri, kanan, atas, dan bawah. Jadi, jika ukuran input citranya 128 x 128 maka setelah dikonvolusi hasilnya menjadi 126 x 126. Ukuran filter atau kernelnya yang digunakan tiap konvolusi layer dalam model ini sendiri sama yaitu berukuran 3 x 3. Pada layer pertama jumlah filter yang digunakan sebesar 32. 
+Gambaran arsitektur \emph{layer} model CNN yang digunakan dapat dilihat pada Gambar \ref{fig:cnnlayer}. \emph{Stride} atau jarak perpindahan konvolusi pada semua \emph{layer} konvolusi sama yaitu satu. Artinya, filter bergeser sebesar satu kotak ukuran matriks pada setiap operasinya. \emph{Padding} yang digunakan pada semua \emph{layer} konvolusi dimodel ini juga sama, yaitu \emph{valid padding}. \emph{Valid padding} berarti tanpa menggunakan \emph{padding} sama sekali. Sehingga, \emph{output} yang dihasilkan (bisa disebut juga dengan \emph{feature map}) berkurang ukurannya masing-masing satu pada kiri, kanan, atas, dan bawah. Jadi, jika ukuran input citranya 128 x 128 maka setelah dikonvolusi hasilnya menjadi 126 x 126. Ukuran filter atau kernelnya yang digunakan tiap konvolusi \emph{layer} dalam model ini sendiri sama yaitu berukuran 3 x 3. Pada \emph{layer} pertama jumlah filter yang digunakan sebesar 32. 
 
 \begin{figure} [ht]
   \centering
   \includegraphics[scale=0.75]{gambar/cnn-layer.png}
-  \caption{CNN Layer}
+  \caption{Desain Model CNN yang digunakan}
   \label{fig:cnnlayer}
 \end{figure}
 
-Pada layer kedua, dilakukan proses \emph{max pooling}. Ukuran max pooling yang digunakan sebesar 2 x 2. Karena ukuran yang digunakan 2 x 2, maka hasil dari pooling layer ini menghasilkan matriks dengan ukuran sebesar setengah dari sebelumnya. Apabila layer yang dilakukan pooling awalnya sebesar 126 x 126, maka hasil setelah dilakukan pooling adalah sebesar 63 x 63.
+Pada \emph{layer} kedua, dilakukan proses \emph{max pooling}. Ukuran max pooling yang digunakan sebesar 2 x 2. Karena ukuran yang digunakan 2 x 2, maka hasil dari pooling \emph{layer} ini menghasilkan matriks dengan ukuran sebesar setengah dari sebelumnya. Apabila \emph{layer} yang dilakukan pooling awalnya sebesar 126 x 126, maka hasil setelah dilakukan pooling adalah sebesar 63 x 63.
 
-Dalam layer ketiga, dilakukan proses konvolusi lagi. \emph{Stride}, ukuran filter dan padding yang digunakan sama dengan layer pertama, yang membedakan hanya pada jumlah filternya yang sebesar 64 filter. Layer keempat dilakukan pooling lagi dengan pengaturan sama persis dengan pooling pada layer kedua. Hasilnya berupa feature map berukuran 30 x 30.
+Dalam \emph{layer} ketiga, dilakukan proses konvolusi lagi. \emph{Stride}, ukuran filter dan \emph{padding} yang digunakan sama dengan \emph{layer} pertama, yang membedakan hanya pada jumlah filternya yang sebesar 64 filter. Layer keempat dilakukan pooling lagi dengan pengaturan sama persis dengan pooling pada \emph{layer} kedua. Hasilnya berupa feature map berukuran 30 x 30.
 
-Feature map yang dihasilkan dari ekstraksi fitur perlu melakukan flatten karena masih berbentuk multidimensional array. Dari proses tersebut didapatkan sebuah vector. Hal ini bertujuan agar bisa digunakan sebagai input dari fully-connected layer. Lapisan Fully-connected adalah lapisan dimana semua neuron aktivitas dari lapisan sebelumnya terhubung semua dengan neuron di lapisan selanjutnya. Lapisan ini digunakan dengan tujuan untuk mengolah data sehingga bisa diklasifikasikan nantinya. Oleh karena itu, pada Gambar \ref{fig:cnnlayer} bagian paling kanan adalah hasil akhir dimana terdapat array berukuran 1 x 8. Dimana, angka delapan ini menunjukkan jumlah kelas yang ada dalam model ini.
+\emph{Feature map} yang dihasilkan dari ekstraksi fitur perlu melakukan flatten karena masih berbentuk multidimensional array. Dari proses tersebut didapatkan sebuah vector. Hal ini bertujuan agar bisa digunakan sebagai input dari \emph{fully connected layer}. Lapisan \emph{Fully connected} adalah lapisan dimana semua neuron aktivitas dari lapisan sebelumnya terhubung semua dengan neuron di lapisan selanjutnya. Lapisan ini digunakan dengan tujuan untuk mengolah data sehingga bisa diklasifikasikan nantinya. Oleh karena itu, pada Gambar \ref{fig:cnnlayer} bagian paling kanan adalah hasil akhir dimana terdapat array berukuran 1 x 8. Dimana, angka delapan ini menunjukkan jumlah kelas yang ada dalam model ini.
 
-Selain dilakukan pengaturan layer-layer yang digunakan, terdapat hyperparameter yang perlu dikonfigurasi, sebelum melakukan training. Seperti misalnya adalah jumlah epochs, yang digunakan. Epochs sendiri adalah hyperparameter yang memiliki fungsi dalam menentukan banyaknya pengulangan dalam menjalankan algoritma learning dalam proses training. Banyaknya epochs yang digunakan dalam model ini adalah 20 epochs. 
+Selain dilakukan pengaturan \emph{layer} yang digunakan, terdapat hyperparameter yang perlu dikonfigurasi, sebelum melakukan \emph{training}. Seperti misalnya adalah jumlah epochs, yang digunakan. Epochs sendiri adalah hyperparameter yang memiliki fungsi dalam menentukan banyaknya pengulangan dalam menjalankan algoritma learning dalam proses \emph{training}. Banyaknya epochs yang digunakan dalam model ini adalah 20 epochs. 
 
 % Proses training ini dimulai dari operasi konvolusi matriks citra, yang kemudian dilanjutkan dengan proses \emph{Max Pooling}. Proses ini dijalankan untuk menghasilkan fitur dari citra yang diinputkan.  
 
@@ -139,9 +155,9 @@ Selain dilakukan pengaturan layer-layer yang digunakan, terdapat hyperparameter 
 \subsection{Prediksi Model}
 \label{subsec:Prediksi Model}
 
-Fungsi dari prediksi model klasifikasi ini adalah untuk menyatakan suatu objek kedalam kategori yang sudah ditentukan dengan cara membandingkan input kamera dengan hasil training model mana yang sesuai. Bagian awal dari proses ini adalah deteksi objek tangan yang dimana prosesnya sudah ditangani oleh \emph{framework} mediapipe. Apabila objek tangan terdeteksi, dilanjut dengan proses yang namanya \emph{localization}. \emph{localization} menjadi bagian dari klasifikasi yang menambahkan citra dengan menentukan lokasi objek dengan bantuan \emph{bounding box} atau kotak pembatas. 
+Fungsi dari prediksi model klasifikasi ini adalah untuk menyatakan suatu objek kedalam kategori yang sudah ditentukan dengan cara membandingkan input kamera dengan hasil \emph{training} model mana yang sesuai. Bagian awal dari proses ini adalah deteksi objek tangan yang dimana prosesnya sudah ditangani oleh \emph{library} MediaPipe. Apabila objek tangan terdeteksi, dilanjut dengan proses yang namanya \emph{localization}. \emph{localization} menjadi bagian dari klasifikasi yang menambahkan citra dengan menentukan lokasi objek dengan bantuan \emph{bounding box} atau kotak pembatas. 
 
-Tujuan utama deteksi objek adalah memprediksi lokasi objek dengan \emph{bounding box} atau kotak pembatas dan melakukan klasifikasi objek yang ada pada setiap \emph{bounding box}. Input pada deteksi objek adalah citra yang mengandung satu objek tangan. Sedangkan outputnya adalah hasil prediksi lokasi objek dengan \emph{bounding box} dan klasifikasi kelasnya \parencite{MElgendy}. Ukuran dari kotak ini disamakan dengan dataset yang di-\emph{training}, yaitu 128 x 128. Termasuk juga, didalamnya diberikan padding 64 piksel disemua sisinya seperti yang dilakukan pada Subbab \ref{sec:poseprediction}.
+Tujuan utama deteksi objek adalah memprediksi lokasi objek dengan \emph{bounding box} atau kotak pembatas dan melakukan klasifikasi objek yang ada pada setiap \emph{bounding box}. Input pada deteksi objek adalah citra yang mengandung satu objek tangan. Sedangkan \emph{output}-nya adalah hasil prediksi lokasi objek dengan \emph{bounding box} dan klasifikasi kelasnya \parencite{MElgendy}. Ukuran dari kotak ini disamakan dengan dataset yang di-\emph{training}, yaitu 128 x 128. Termasuk juga, didalamnya diberikan \emph{padding} 64 piksel disemua sisinya seperti yang dilakukan pada Subbab \ref{sec:poseprediction}.
 
 Dalam memprediksi pose yang diinputkan melalui kamera, digunakan sebuah fungsi yang ada pada \emph{library keras}. Output dari fungsi ini adalah array dengan jumlah index sebanyak jumlah kelas yang ada pada model. Sehingga, dari hasil array ini dapat dipilih nilai prediksi yang paling memenuhi untuk klasifikas kelas kita. 
 
@@ -157,70 +173,122 @@ Tampilan secara \emph{real time} hasil prediksi pada program seperti terlihat pa
 \section{Kontrol PPT}
 \label{kontrolppt}
 
-Tahapan ini menghubungkan hasil klasifikasi yang didapatkan dari model, kedalam aplikasi presentasi yang digunakan. Proses implementasi ini membuat program \emph{python} yang dibuat terhubung dengan aplikasi \emph{Microsoft Power Point}. Saat terhubung dilakukan penerapan aksi kontrol kedalam slide presentasi sesuai dengan pose yang terdeteksi.
+Tahapan ini menghubungkan hasil klasifikasi yang didapatkan dari model, kedalam aplikasi presentasi yang digunakan. Proses implementasi ini membuat program \emph{python} yang menerapkan aksi kontrol kedalam \emph{slide} presentasi sesuai dengan pose yang terdeteksi. Seperti yang dijelaskan pada Subbab \ref{subsec:Prediksi Model}, Hasil keluaran dari model adalah \emph{array} yang dimana panjangnya sebanyak kelas yang dimiliki. Berdasarkan nilai pada tiap \emph{index} dalam \emph{array} tersebut dicari nilai tertingginya yang berada diatas \emph{threshold}. Sehingga, menghasilkan prediksi citra memasuki kelas antara 1 sampai 8. Gambarannya dapat dilihat pada Gambar \ref{fig:Ilustrasi Penghubungan Model dengan Kontrol PPT}.
 
-\subsection{Menghubungkan dengan Fungsi Kontrol PPT}
-\label{Menghubungkan dengan Fungsi Kontrol PPT}
+\newpage
 
-Proses ini menggunakan \emph{libray} yang ada pada \emph{python} bernama \emph{pywin32}. Didalamnya terdapat beberapa fungsi yang dapat diakses untuk menavigasi aplikasi \emph{PowerPoint}. Beberapa fungsi dalam aplikasi \emph{Microsoft Power Point} yang dapat diakses adalah seperti navigasi ke slide selanjutnya, navigasi ke slide sebelumnya, dan mengaktifkan \emph{tool pointer}. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.9]{gambar/output-model.png}
+  \caption{Ilustrasi Penghubungan Model dengan Kontrol PPT}
+  \label{fig:Ilustrasi Penghubungan Model dengan Kontrol PPT}
+\end{figure}
 
-Selain itu, ada cara lain untuk menghubungkan aplikasi \emph{Microsoft Power Point} dengan program yang dibuat yaitu dengan mengakses berbagai macam \emph{shortcut keyboard} yang tersedia. Cara ini dapat dilakukan karena \emph{Microsoft Power Point} memang menyediakan fitur untuk mengontrol presentasi menggunakan keyboard. Sebagai contoh, untuk mengakses fungsi \emph{"pen tool"} dapat menekan tombol \emph{"ctrl"} dan \emph{"p"} secara bersamaan. Daftar lengkap shortcut keyboard untuk kontrol presentasi yang digunakan dalam tugas akhir ini, dapat dilihat pada tabel \ref{tb: daftarshortcutkeyboardmicrosoftpowerpoint}. Perlu diketahui juga, dalam penerapan cara ini dibutuhkan \emph{library pyautogui} supaya dapat mengakses \emph{keyboard} pada perangkat komputer yang digunakan. 
+Keluaran yang didapatkan dari prediksi model pada Gambar \ref{fig:Ilustrasi Penghubungan Model dengan Kontrol PPT}, berfungsi untuk dijadikan input dari kontrol PPT. Masing-masing angka merepresentasikan jenis kontrol yang diterapakan dalam PPT. Daftar lengkap representasi dari tiap angka dan jenis kontrolnya dapat dilihat dalam Tabel \ref{tb:Daftar Nomor Kelas dan Jenis Kontrolnya}.
 
 \begin{longtable}{|c|c|}
-  \caption{Daftar \emph{Shortcut Keyboard Microsoft Power Point}}
+  \caption{Daftar Nomor Kelas dan Jenis Kontrolnya}
+  \label{tb:Daftar Nomor Kelas dan Jenis Kontrolnya}\\
+  \hline
+  \textbf{Nomor Kelas} & \textbf{Kontrol PPT} \\
+  \hline
+  1 & \emph{Erase}  \\
+  2 & \emph{Next Slide}  \\
+  3 & \emph{Pen Left}  \\
+  4 & \emph{Pen Right}  \\
+  5 & \emph{Pointer}  \\
+  6 & \emph{Previous Slide}  \\
+  7 & \emph{Zoom Left}  \\
+  8 & \emph{Zoom Right}  \\
+  \hline
+\end{longtable}
+
+Keluaran prediksi model dan jenis kontrol PPT dalam Tabel \ref{tb:Daftar Nomor Kelas dan Jenis Kontrolnya}, dihubungkan dengan berbagai macam \emph{shortcut keyboard} yang tersedia dalam fitur Microsoft PowerPoint untuk mengontrol \emph{slide}. Sebagai contoh, untuk mengakses fungsi \emph{"pen tool"} dapat menekan tombol \emph{"ctrl"} dan \emph{"p"} secara bersamaan. Daftar lengkap shortcut \emph{keyboard} untuk kontrol presentasi yang digunakan dalam tugas akhir ini, dapat dilihat pada tabel \ref{tb: daftarshortcutkeyboardmicrosoftpowerpoint}. Perlu diketahui juga, dalam penerapan cara ini dibutuhkan \emph{library pyautogui} supaya dapat mengakses \emph{keyboard} pada perangkat komputer yang digunakan. 
+
+\begin{longtable}{|c|c|}
+  \caption{Daftar \emph{Shortcut Keyboard} Microsoft PowerPoint}
   \label{tb: daftarshortcutkeyboardmicrosoftpowerpoint}\\
   \hline
   \textbf{Perintah Kontrol} & \textbf{Shortcut Keyboard} \\
   \hline
-  \emph{erase}   & \emph{'e'}  \\
-  \emph{next slide}   & Panah Kanan  \\
-  \emph{previous slide}   & Panah Kiri  \\
-  \emph{pointer}   & \emph{'ctrl + l'}  \\
-  \emph{pen}   & \emph{'ctrl' + 'p'}  \\
-  \emph{zoom}   & \emph{'ctrl' + 'mouse wheel up'}  \\
+  \endhead
+  \emph{Erase}   & \emph{'e'}  \\
+  \emph{Next slide}   & Panah Kanan  \\
+  \emph{Previous slide}   & Panah Kiri  \\
+  \hline
+  \emph{Pointer}   & \emph{'ctrl + l'}  \\
+  \emph{Pen}   & \emph{'ctrl' + 'p'}  \\
+  \emph{Zoom}   & \emph{'ctrl' + 'mouse wheel up'}  \\
   \hline
 \end{longtable}
 
-\subsection{Kontrol Navigasi}
-\label{Kontrol Navigasi}
-Dalam mengontrol navigasi (\emph{next slide} dan \emph{previous slide}), proses yang dilakukan cukup dengan memanggil fungsi dalam \emph{library pyautogui}. Namun, terdapat satu permasalahan ketika setiap hasil deteksi pose langsung dihubungkan dengan fungsi tersebut. Dimana, aplikasi \emph{Power Point} menjalankan fungsi \emph{next} atau \emph{previous} tersebut secara terus menerus. 
+% \subsection{Kontrol Navigasi}
+% \label{Kontrol Navigasi}
+% Dalam mengontrol navigasi (\emph{next slide} dan \emph{previous slide}), proses yang dilakukan cukup dengan memanggil fungsi dalam \emph{library pyautogui}. Namun, terdapat satu permasalahan ketika setiap hasil deteksi pose langsung dihubungkan dengan fungsi tersebut. Dimana, aplikasi PowerPoint menjalankan fungsi \emph{next} atau \emph{previous} tersebut secara terus menerus. 
 
-Oleh karena itu, perlu dibuatkan kondisi apabila terdeteksi pose navigasi, maka jalankan fungsi \emph{next} atau \emph{previous} sekali saja. Caranya dengan memberi jeda atau \emph{delay} agar tidak memproses hasil prediksi selanjutnya. Delay yang digunakan adalah sebesar satu detik.
+% Oleh karena itu, perlu dibuatkan kondisi apabila terdeteksi pose navigasi, maka jalankan fungsi \emph{next} atau \emph{previous} sekali saja. Caranya dengan memberi jeda atau \emph{delay} agar tidak memproses hasil prediksi selanjutnya. Delay yang digunakan adalah sebesar satu detik.
 
-\subsection{Kontrol \emph{Pointer}}
-\label{subsec:Kontrol Pointer}
-
+% \subsection{Kontrol \emph{Pointer}}
+% \label{subsec:Kontrol Pointer}
+ 
 Beberapa perintah tertentu juga perlu menggunakan \emph{cursor} dalam penggunaannya. Salah satunya adalah {tool} untuk \emph{pointer}. Hal ini berarti, dalam penerapannya perlu menghubungkan dengan \emph{library cursor} dan mengubah titik koordinatnya supaya bergerak menyesuaikan gerakan tangan. Oleh karena itu, perlu ditentukan satu titik landmark yang menjadi acuan gerak cursor tersebut. 
 
 Titik landmark yang dipilih adalah titik ke-8, yaitu bagian ujung telunjuk tangan (daftar titik \emph{landmark} dapat dilihat pada Tabel \ref{tb:keterangansetiaptitiklandmark}). Titik ini dipilih karena secara natural dapat menjadi acuan dalam menunjuk sesuatu. Penggunaan ujung telunjuk dapat dirasa lebih memudahkan pengguna untuk menentukan di titik mana pose ingin diarahkan. Penggunaan titik acuan ini juga diterapkan untuk fungsi yang lainnya, yaitu zoom dan pen.
 
-Penghubungan antara input gambar dengan titik koordinat pergerakan \emph{cursor} dilakukan dengan memanfaatkan kemampuan fitur bawaan dari \emph{mediapipe}. Dalam \emph{mediapipe}, dapat diambil data koordinat posisi tangan relatif terhadap ukuran panjang dan lebar kamera. Nilai koordinat yang didapatkan memiliki rentang mulai dari 0 sampai 1. Namun, data ini bersifat \emph{mirror} atau terbalik karena diambil melalui kamera. Jadi, misalnya ukuran kamera yang digunakan adalah 640 x 480. Maka koordinat (0, 0) dalam \emph{mediapipe} berada pada titik piksel (640, 0). Sedangkan untuk koordinat (1, 1), maka letak pikselnya berada pada (0, 480). 
+Penghubungan antara input gambar dengan titik koordinat pergerakan \emph{cursor} dilakukan dengan memanfaatkan kemampuan fitur bawaan dari MediaPipe. Dalam MediaPipe, dapat diambil data koordinat posisi tangan relatif terhadap ukuran panjang dan lebar kamera. Nilai koordinat yang didapatkan memiliki rentang mulai dari 0 sampai 1. Namun, data ini bersifat \emph{mirror} atau terbalik karena diambil melalui kamera. Jadi, misalnya ukuran kamera yang digunakan adalah 640 x 480. Maka koordinat (0, 0) dalam MediaPipe berada pada titik piksel (640, 0). Sedangkan untuk koordinat (1, 1), maka letak pikselnya berada pada (0, 480). 
 
-Koordinat yang didapat dari \emph{mediapipe} ini dihubungkan dengan ukuran layar dari komputer, supaya dapat menggerakkan \emph{cursor} pada titik yang diinginkan dalam layar. Cara dalam menghubungkannya melalui operasi perkalian antara rentang koordinat yang didapat dari \emph{mediapipe} dengan ukuran layar. Hasil ini yang menjadi input untuk menentukkan titik \emph{cursor} perlu digerakkan kemana.
+Koordinat yang didapat dari MediaPipe ini dihubungkan dengan ukuran layar dari komputer, supaya dapat menggerakkan \emph{cursor} pada titik yang diinginkan dalam layar. Cara dalam menghubungkannya melalui operasi perkalian antara rentang koordinat yang didapat dari MediaPipe dengan ukuran layar. Hasil ini yang menjadi input untuk menentukkan titik \emph{cursor} perlu digerakkan kemana.
 
-Sebagai contoh hasil penerapannya, dapat dilihat pada gambar \ref{fig:Kontrol Pointer}. Dilakukan proses pengaktifan fungsi \emph{pointer} dengan menggunakan hasil klasifikasi pose tangan yang didapatkan dari proses prediksi model yang telah dijelaskan dalam Subbab \ref{subsec:Prediksi Model}.
+% % Sebagai contoh hasil penerapannya, dapat dilihat pada gambar \ref{fig:Kontrol Pointer}. Dilakukan proses pengaktifan fungsi \emph{pointer} dengan menggunakan hasil klasifikasi pose tangan yang didapatkan dari proses prediksi model yang telah dijelaskan dalam Subbab \ref{subsec:Prediksi Model}.
 
-\begin{figure}[ht]
+% % \begin{figure}[ht]
+% %   \centering
+% %   \includegraphics[scale=0.38]{gambar/hasil-kontrol-PPT.png}
+% %   \caption{Kontrol Pointer}
+% %   \label{fig:Kontrol Pointer}
+% % \end{figure}
+
+% \subsection{Kontrol \emph{Pen}}
+% \label{subsec:Kontrol Pen}
+
+% 
+Dalam penerapan fungsi lain seperti \emph{pen} dan \emph{zoom} penentuan titik koordinatnya sama persis dengan yang fungsi \emph{pointer}. Pembedanya ada proses perubahan \emph{state}. Perubahan \emph{state} yang dilakukan memiliki tujuan tertentu. Pertama, dapat menghindari perubahan hasil deteksi ketika sedang menggerakkan tangan. Selain itu, saat berubah \emph{state} proses prediksi model untuk klasifikasi juga tidak dijalankan. Sehingga saat sedang menggambar misalnya, diharapkan dapat menurunkan proses komputasi agar tidak menurunkan \emph{frame rate}.
+
+Pada penerapan \emph{pen}, kondisi \emph{state} ini hanya mengaktifkan fiturnya, namun tidak menekan tombol klik. Penekanan tombol klik baru dilakukan ketika bagian ujung jempol dihubungkan dengan jari tengah. Tepatnya pada titik \emph{landmark} ke-10 dan ke-4 (Detail letak titik ini dapat dilihat pada Tabel \ref{tb:keterangansetiaptitiklandmark}). Jika jaraknya lebih kecil dari 0,05 maka program mengirimkan input untuk menekan klik kiri pada \emph{mouse}. Mekanisme tersebut dibuat agar penggunaan fitur \emph{pen} terasa lebih mudah seperti menggunakan \emph{mouse}.
+
+% \subsection{Kontrol \emph{Zoom In}}
+% \label{subsec:Kontrol Zoom In}
+
+% Kontrol zoom pada dasarnya sama dengan pen, yang membedakan pada kondisi \emph{trigger} fungsi zoom. Pada kontrol ini yang menjadi acuan adalah jarak antara ujung jempol dengan ujung telunjuk. Lebih tepatnya titik \emph{landmark} ke-8 dan ke-4. Jika jaraknya masih terhitung menempel maka fungsi zoom belum dijalankan. Namun, jika jaraknya mulai menjauh baru menjalankan fungsi zoom. Besarnya zoom yang dilakukan adalah sebesar 50\%. 
+
+% \subsection{Kontrol \emph{Erase}}
+% \label{subsec:Kontrol Erase}
+% Kontrol pada \emph{erase} lebih sederhana dibandingkan dengan fungsi-fungsi sebelumnya. Jika hasil prediksi pose menghasilkan kelas \emph{erase}, maka program menjalankan fungsi \emph{erase} melalui \emph{library pyautogui}. Perlu diketahui bahwa fungsi \emph{erase} disini untuk menghapus coretan \emph{pen}. Penghapusan yang dilakukan langsung membersihkan seluruh coretan dalam satu layar sekaligus.
+
+\section{Model Kuesioner \emph{User Experience}}
+\label{sec:Model Kuesioner User Experience}
+Terdapat beberapa cara dalam menguji \emph{user experience}, Salah satunya dengan \emph{User Experience Questionare} (UEQ). UEQ berisi kuesioner yang mudah serta efisien, dan berguna untuk mengukur \emph{user experience} pada sebuah produk yang interaktif. \emph{User Experience} disini didefinisikan sebagai persepsi dan tanggapan seseorang yang dihasilkan saat suatu produk tersebut digunakan. Dengan demikian, \emph{User Experience} dipandang sebagai konsep yang mencakup semua jenis reaksi emosional, kognitif atau fisik mengenai produk jadi yang konkret atau bahkan hanya produk yang masih diasumsikan pembuatannya. Penilaian penggunaan produk ini dapat dinilai baik saat sebelum, selama dan setelah digunakan \parencite{AndreasHinderks}. 
+
+UEQ mengukur menggunakan kuesioner yang berisi skala dan mencakup kesan komprehensif tentang (\emph{User Experience}). Terdapat enam skala penilaian akhir dalam UEQ, berikut rinciannya.
+
+\begin{enumerate}[nolistsep]
+  \item\emph{Attractiveness}. \emph{Attractiveness} atau daya tarik menilai kesan secara keseluruhan dari suatu produk. Penilaian ini mengukur apakah pengguna cenderung menyukai atau tidak menyukai produk yang diuji. Oleh karenanya, produk harus dibuat untuk terlihat menarik, menyenangkan, ramah pengguna dan menyenangkan. 
+  \item\emph{Perspicuity}. \emph{Perspicuity} atau kejelasan adalah bagian yang menilai seberapa mudah produk untuk dikenali dan dipelajari cara penggunaannya. Sehingga produk harus dibuat untuk bisa melakukan tugas tertentu dengan cepat, efisien, dan dengan cara yang pragmatis.
+  \item\emph{Efficiency}. \emph{Efficiency} merupakan penilaian yang mengukur apakah pengguna bisa menyelesaikan fungsi atau fitur tertentu dengan melalui usaha yang sedikit mungkin. Selain itu, reaksi dari produk apakah dapat bereaksi dengan cepat atau tidak. Karena itu, produk harus sederhana, dan mudah dipelajari.
+  \item\emph{Dependability}. \emph{Dependability} atau ketepatan menilai apakah interaksi dengan produk ada dibawah kendali dari pengguna. Penilaian ini berkaitan dengan tingkat keakuratan sehingga interaksi yang dihasilkan sesuai dengan prediksi dari pengguna. Hal ini juga berhubungan dengan tingkat keamanan yang dihasilkan dari produk, karena apabila \emph{output} yang terjadi tidak sesuai dengan yang diharapkan, dapat menimbulkan kesalahan prediksi yang tidak dapat diantisipasi oleh pengguna . Sehingga, item ini menilai apakah produk dapat diprediksi, aman, dan memenuhi harapan pengguna atau tidak.
+  \item\emph{Stimulation}. \emph{Stimulation} adalah bagian penilaian yang dapat memiliki efek rangsangan perasaan positif. Perasaan yang timbul ini bisa perasaan menarik, menyenangkan, memotivasi, ataupun seru saat menggunakan produk. Oleh karena itu, produk harus dirancang sedemikian rupa hingga dapat menimbulkan efek rangsangan perasaan menarik dan menyenangkan.
+  \item\emph{Novelty}. \emph{Novelty} atau kebaruan merupakan bagian pengukuran yang menilai seberapakah kreatif dan inovatifnya suatu produk. Apabila suatu produk itu memilki nilai inovasi dan kreatif didalamnya, tentu dapat menimbulkan kesan menarik minat bagi pengguna. Sehingga, produk harus memiliki ide awal yang dirancang secara inovatif dan kreatif, serta menggunakan teknologi yang sesuai dengan perkembangan zaman.
+\end{enumerate}
+
+\begin{figure}[!htb]
   \centering
-  \includegraphics[scale=0.38]{gambar/hasil-kontrol-PPT.png}
-  \caption{Kontrol Pointer}
-  \label{fig:Kontrol Pointer}
+  \includegraphics[scale=1.4]{gambar/pengujian-user-experience/soal-kuesioner.png}
+  \caption{Soal Kuesioner}
+  \label{fig:Soal Kuesioner}
 \end{figure}
 
-\subsection{Kontrol \emph{Pen}}
-\label{subsec:Kontrol Pen}
+Pertanyaan yang ada pada kuesioner ini berjumlah 26 item. Setiap item ini menunjukkan skala satu sampai tujuh, dimana penilaian positifnya ini tergantung pada letak item tiap nomor soalnya. Sebagai contoh, dapat dilihat pada gambar \ref{fig:Soal Kuesioner} dimana pada item nomor satu menyenangkan ada pada sisi kanan. Sehingga, semakin skalanya kearah kanan, maka semakin positif penilaiannya. Namun, pada soal nomor tiga, penilaian kreatif ada pada sisi kiri. Hal ini membuat penilaian positifnya justru ada pada skala yang semakin kecil. 
 
-Dalam penerapan fungsi \emph{pen} penentuan titik koordinatnya sama persis dengan yang fungsi \emph{pointer} yang dijelaskan pada Subbab \ref{subsec:Kontrol Pointer}. Pembedanya adalah pada kondisi untuk menggambarnya. Pada kontrol ini saat posisi pose \emph{pen} terdeteksi, program dibuat untuk berpindah \emph{state} kedalam mode menggambar.
+Tujuan dari dibuatnya pertanyaan seperti ini, agar pengguna yang mengisi kuesioner bisa dapat menilai lebih objektif dan teliti. Apabila penilaian positifnya semuanya ada pada sisi kanan, dikhawatirkan beberapa responden tidak melihat item pada tiap soalnya dan hanya mengisi di sisi yang positif semua atau negatif semua.  
 
-Perubahan \emph{state} yang dilakukan memiliki tujuan tertentu. Pertama, dapat menghindari perubahan hasil deteksi ketika sedang menggerakkan tangan ketika menggambar. Selain itu, saat berubah \emph{state} proses prediksi model untuk klasifikasi juga tidak dijalankan. Sehingga saat sedang menggambar diharapkan tidak terjadi proses komputasi yang tidak perlu dan bisa menurunkan \emph{frame rate}.
-
-Pada \emph{state pen} ini mengaktifkan fitur \emph{pen} dan menggerakkan \emph{cursor}, namun tidak menekan tombol klik. Penekanan tombol klik baru dilakukan ketika bagian ujung jempol dihubungkan dengan jari tengah. mekanisme tersebut dibuat agar penggunaan fitur \emph{pen} terasa lebih mudah seperti menggunakan \emph{mouse}. Cara kerjanya adalah dengan mengukur jarak antara titik ujung jempol dengan bagian dari jari tengah. Tepatnya pada titik \emph{landmark} ke-10 dan ke-4 (Detail letak titik ini dapat dilihat pada Tabel \ref{tb:keterangansetiaptitiklandmark}). Jika jaraknya diangka lebih kecil dari 0,05 maka program mengirimkan input untuk menekan klik kiri pada \emph{mouse} dan jika tidak maka penekanan klik ini akan dilepaskan.
-
-\subsection{Kontrol \emph{Zoom In}}
-\label{subsec:Kontrol Zoom In}
-
-Kontrol zoom pada dasarnya sama dengan pen, yang membedakan pada kondisi \emph{trigger} fungsi zoom. Pada kontrol ini yang menjadi acuan adalah jarak antara ujung jempol dengan ujung telunjuk. Lebih tepatnya titik \emph{landmark} ke-8 dan ke-4. Jika jaraknya masih terhitung menempel maka fungsi zoom belum dijalankan. Namun, jika jaraknya mulai menjauh baru menjalankan fungsi zoom. Besarnya zoom yang dilakukan adalah sebesar 50\%. 
-
-\subsection{Kontrol \emph{Erase}}
-\label{subsec:Kontrol Erase}
-Kontrol pada \emph{erase} lebih sederhana dibandingkan dengan fungsi-fungsi sebelumnya. Jika hasil prediksi pose menghasilkan kelas \emph{erase}, maka program menjalankan fungsi \emph{erase} melalui \emph{library pyautogui}. Perlu diketahui bahwa fungsi \emph{erase} disini untuk menghapus coretan \emph{pen}. Penghapusan yang dilakukan langsung membersihkan seluruh coretan dalam satu layar sekaligus.
+Berdasarkan pertanyaan dalam tiap item kuesioner, dikumpulkan dan dianalisis penilaiannya seperti apa. Dalam penggunaan UEQ, sudah terdapat \emph{tools} yang dapat digunakan untuk menilai \emph{output} dari pengujian ini. \emph{Output}-nya berupa diagram yang dengan nilai tertentu dari setiap enam skala penilaian dalam UEQ yaitu daya tarik, kejelasan, efisiensi, ketepatan, stimulasi, dan kebaruan.
